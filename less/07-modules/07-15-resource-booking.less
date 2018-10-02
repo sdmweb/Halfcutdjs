@@ -1,0 +1,232 @@
+.resource-booking {
+	.time-period-nav {
+		ul,li {
+			.list-reset;
+		}
+		.month-selector {
+			text-align: center;
+			#month-select {
+				width: auto;
+			}
+			label {
+				.visuallyhidden;
+			}
+		} 
+		ul {
+			display: table;
+			width: 100%;
+			padding: 0.5em 0;
+		}
+		li {
+			display: table-cell;
+		}
+		.date-info {
+			text-align: center;
+		}
+		.previous-time,
+		.next-time {
+			width: 100px;
+		}
+		.next-time {
+			text-align: right;
+		}
+	}
+}
+
+.resource-display {
+	header {
+		h3 {
+			text-align: center;
+		}
+	}
+}
+
+.resource-booking {
+	.rb-alert {
+		position: fixed;
+		width: 60%;
+		margin-left: -30%;
+		left: 50%;
+		top: 0;
+		background: @text-color;
+		color: @bright-white;
+		padding: 1em;
+		button {
+			float: right;	
+		}
+	}
+}
+
+#rb-day-view {
+	.day-options {
+		.show-booking-form {
+			display: none;
+		}
+	}
+}
+
+#rb-form-container {
+	float: right;
+	width: 24%;
+	padding: 0.8em 0 0.4em 1.6em;
+	form {
+		fieldset {
+			ul {
+				.list-reset;
+				li {
+					.list-reset;
+				}
+				input[type="submit"] {
+					margin-top: 1em;
+				}
+			}
+		}
+	}
+}
+
+#rb-day-calendar {
+	margin-right: 24%;	
+}
+
+.mobile-and-column() {
+	#rb-day-view {
+		.day-options {
+			.show-booking-form {
+				display: block;
+			}
+		}
+	}
+	#rb-form-container {
+		float: none;
+		width: auto;
+		padding: 0;
+		display: none;
+		position: relative;
+		&.show-form {
+			display: block;
+		}
+		form.field-manager-enabled {
+			position: absolute;
+			width: 74%;
+			top: 0;
+			left: 50%;
+			margin-left: -36%;
+			background: @bright-white;
+			padding: 1em;
+			border: solid 1px @text-color;
+		}
+	}
+	#rb-day-calendar {
+		margin-right: 0;	
+	}
+}
+
+.placement-row-2-up, 
+.placement-row-3-up, 
+.placement-row-4-up {
+	.mobile-and-column;
+}
+
+@media @mobile {
+	.mobile-and-column;
+}
+
+.resource-calendar {
+	&.week-display {
+		tbody {
+			tr.res-ch {
+				&:hover {
+					td {
+						background: none;
+					}
+				}
+				th.res-ch {
+					.popup-holder {
+						position: relative;
+						.more-info.resource-info {
+							display: none;
+							background: @bright-white;
+							color: @text-color;
+							top: 0;
+							left: 100%;
+							width: 300px;
+							padding: 0.5em;
+							border: solid 1px @text-color;
+							h4 {
+								margin-top: 0.5em;
+							}
+						}
+					}
+				}
+				th.res-ch:hover {
+					.popup-holder {
+						.more-info.resource-info {
+							display: block;
+							position: absolute;
+							z-index: 9999;
+						}
+					}
+				}
+				td.res-ch {
+					position: relative;
+					.popup-holder {
+						position: relative;
+						height: 50px;
+						.more-bookings-info {
+							position: absolute;
+							bottom: 100%;
+							left: 0;
+							.more-info-inner {
+								border: solid 1px @text-color;
+								background: @bright-white;
+								padding: 1.5em;
+								width: 350px;
+								min-height: 200px;
+								h4 {
+									margin-top: 0.5em;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.resource-calendar {
+	&.day-display {
+		tr {
+			td {
+				text-align: center;
+			}
+		}
+		.rb-booked-time-slot {
+			border:1px solid @grey;
+			text-transform:capitalize;
+			text-align:left;
+			vertical-align:top;
+			.booking-details {
+				display:table;
+				width:100%;
+				@media @mobile {
+					display:block;
+				}
+				li {
+					display:table-cell;
+					padding:1em;
+					@media @mobile {
+						display:block;
+						text-align:left;
+					}
+				}
+				.cancel-booking {
+					text-align:right;
+					@media @mobile {
+						text-align:left;
+					}
+				}
+			}
+		}
+	}
+}

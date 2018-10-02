@@ -1,0 +1,386 @@
+/*------------- Events Calendar ----------------*/
+
+.events-calendar-top{ //nav
+	.clearfix;
+	padding-bottom: 0em;
+	ol{
+		.list-reset;
+		li{
+			float: left;
+			margin-right: 0.8em;
+			a{
+				padding-left: 24px;
+				.bg-pos(no-repeat,left,center);
+				&.month-view {
+					background-image:url("@{standard-images-url}events-calendar/view-nav-icons/calendar-view-month.png");
+				}
+				&.week-view {
+					background-image:url("@{standard-images-url}events-calendar/view-nav-icons/calendar-view-week.png");
+				}
+				&.day-view,
+				&.today-view {
+					background-image:url("@{standard-images-url}events-calendar/view-nav-icons/calendar-view-day.png");
+				}
+				&.all-types-view {
+					background-image:url("@{standard-images-url}events-calendar/view-nav-icons/event-types-view.png");
+				}
+				&.all-events-view {
+					background-image:url("@{standard-images-url}events-calendar/view-nav-icons/calendar-view.png");
+				}
+
+			}
+		}
+	}
+}
+
+#container .event-calendar-time-navigation {
+	.content-headline {
+		.border-radius(0);
+		float: none;
+		//margin: -1em -1em 0;
+		
+	}
+	.month-year-nav {
+		margin: 1em 0;
+		padding: 0 1em;
+		a {
+			//color: @bright-white;
+		}
+	}
+}
+
+.event-key{
+	.clearfix;
+	margin-top: 0.3em;
+	.event-key-table{ //ol
+		font-size: 0.9em;
+		.list-reset;
+		li{
+			float: left;
+			.list-reset;
+			margin-right: 1em;
+		}
+		span{
+			.inline-block;
+			height: 12px;
+			width: 12px;
+			.border-radius(50%);
+			vertical-align: middle;
+		}
+		.event-type-name {
+			display: inline-block;
+		}
+	}
+}
+
+.type-eventscalendar {
+	.venue-itinerary-form {
+		display: none;
+	}
+}
+
+/*------------- Month View ----------------*/
+.activity-calendar{
+	.content-headline {
+		border-bottom: none !important;
+		h2{
+			margin-top: 0;
+			text-align: center;
+		}
+	}
+	.prev-year {
+		float:left;
+		margin-right: 1em;
+		&:before {
+			content: "<<";
+		}
+	}
+	.next-year {
+		float:right;
+		margin-left: 1em;
+		&:after {
+			content: ">>";
+		}
+	}
+	.prev-month {
+		float:left;
+		&:before {
+			content: "<";
+		}
+	}
+	.next-month {
+		float:right;
+		&:after {
+			content: ">";
+		}
+	}
+	
+	.ac-calendar{
+		margin: 0.8em 0;
+	}
+	
+	.days-head {
+		.clearfix;
+		td{
+			.list-reset;
+			width: (100%/7);
+			padding: 0 0.4em;
+		}
+		.ie7 & {
+			margin-top: 2.2em;
+		}
+	}
+	
+	@calendar-border-color: @lighter-grey;
+	
+	.days-head{
+		//border: 1px solid @calendar-border-color;
+		text-align: center;
+	}
+	.days-head {
+		th {
+			text-align: center;
+		}
+		td {
+			height: 80px;
+			border: 1px solid @calendar-border-color !important;
+			border-right: 0;
+			border-top: 0;
+			vertical-align: top;
+			.ac-day-inner {
+				text-align: left;
+				p{
+					margin: 0;
+				}
+				a {
+					text-decoration: none !important;
+				}
+			}
+		}
+		tr {
+			&:nth-child(2n) {
+				td {
+					background: none;
+				}
+			}
+			&:hover {
+				td {
+					background: none;
+				}
+			}
+		}
+	}
+	
+	.ac-calendar-lead{
+		background: lighten(@off-white, 3%) !important;
+	}
+	.today{
+		
+	}
+	
+	.ac-activity{ // indicator
+		.inline-block;
+		height: 12px;
+		width: 12px;
+		.border-radius(50%) !important;
+		border: 0;
+		margin: 0.3em 0.3em 0 0;
+		color: rgba(00,00,00,0); // make the little number transparent
+		&:hover,
+		&:active,
+		&:focus{
+			color: rgba(00,00,00,0);
+		}
+		&.event-name {
+			.border-radius(0) !important;
+			border-bottom: solid 4px;
+			color: @text-color;
+			width: auto;
+			height: auto;
+			font-size: 80%;
+			line-height: 1;
+			.transition(border-bottom, 0.2s);
+			&:hover,
+			&:active,
+			&:focus{
+				border-bottom: solid 6px;
+			}
+		}
+	}
+	
+	/*--- Mini calendar for mobile and columns ---*/
+	.mini-calendar(){
+		.days-head{
+			thead {
+				display: none;
+			}
+			tbody {
+				display: block;
+				tr {
+					height: auto !important;
+					display: block;
+					td {
+						display: block;
+						width: 100% !important;
+						height: auto !important;
+					}
+					.ac-activity {
+						font-size: 100%;
+						margin: 1em 0;
+					}
+					.ac-calendar-lead {
+						display: none;
+					}
+				}
+			}
+			display: block;
+		}
+		.ac-month-list{
+			border-top: 1px solid @calendar-border-color;
+			td{
+				height: 45px;
+				p{
+					font-size: 0.8em;
+				}
+			}
+		}
+		.ac-activity{
+			display: block;
+			margin: 2px 0.3em 0 0;
+		}
+	}
+	
+	@media only screen and (max-width:880px){
+		.mini-calendar;
+	}
+	
+	/*--- In a column or mulitple placement row ---*/
+	.col &,
+	.placement-row-2-up &,
+	.placement-row-3-up &,
+	.placement-row-4-up &{
+		.mini-calendar;
+		.prev-year,
+		.next-year,
+		.events-calendar-top{
+			display: none;
+		}
+	}
+	
+	
+}
+
+/*------------- Week view ----------------*/
+.no-events{
+	text-align: center;
+}
+
+.basic-event-details,
+.event-details{
+	.list-reset;
+	li{
+		.list-reset;
+		display: table-row;
+		span{
+			padding-bottom: 0.5em;
+		}
+		.event-label{
+			display: table-cell;
+			padding-right: 0.8em;
+			color: @text-color;
+		}
+		.event-detail{
+			display: table-cell;
+			padding-left: 13px;
+		}
+	}
+}
+.event-type-colour{
+	.inline-block;
+	height: 12px;
+	width: 12px;
+	.border-radius(50%);
+}
+
+.event-calendar-time-navigation{
+	margin-bottom: 0.5em;
+}
+
+/*------------- Day View----------------*/
+.event-list-wrap{
+	p{ // no events message
+		text-align: center;
+	}
+	.list-event-item p,
+	.single-event-wrap p{
+		text-align: left;
+	}
+	
+	
+	.content-items-list{
+		.list-reset;
+	}
+}
+
+/*------------- IE fixes ----------------*/
+.no-rgba{
+	.activity-calendar .ac-activity{
+		//font-size: 0px;
+		text-decoration: none;
+	}
+}
+.ie7{
+	.activity-calendar .days-head li,
+	.activity-calendar .ac-month-list li{
+		width: 12%;
+	}
+	.col{
+		.activity-calendar .days-head li,
+		.activity-calendar .ac-month-list li{
+			width: 11%;
+		}
+	}
+	.event-type-colour{
+		margin-right: 0.4em;
+	}
+	.basic-event-details,
+	.event-details{
+		li{
+			.event-label{
+				padding: 0;
+				width: 80px;
+			}
+			.event-detail{
+				padding: 0;
+			}
+		}
+	}
+}
+
+/*Create event form in frontend*/
+#container {
+	#create-event-form {
+		fieldset {
+			margin-top: 1em;
+			legend {
+				font-weight: 700;
+				font-size: 1.2em;
+			}
+			.row {
+				border: none;
+				label {
+					display: inline;
+				}
+				.mandatory-field {
+					display: inline;
+					color: red;
+					padding-right: 1em;
+				}
+				select {
+					display: block;
+				}
+			}
+		}
+	}
+}
+

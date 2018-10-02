@@ -1,0 +1,525 @@
+/*1120*/
+.form-in-new-window{
+	margin: 0.5em 0;
+	
+	fieldset {
+		padding: 0;
+	}
+	
+	legend {
+		margin-top: 1em;
+		font-weight: 700;
+		padding: 0.3em 0;
+	}
+	
+	p.labelman {
+		margin: 0;
+		padding: 0.6em 0;
+		border-top: solid 3px @lightest-grey;
+	}
+	
+	// p: explanation of what the asterisk means
+	.labelman {
+		font-size: 85%;
+		color: red;
+	}
+	// span: the actual asterisk
+	label .labelman{
+		color: red;
+		font-size: 18px;
+		font-weight: 700;
+	}
+	table .labelman {
+		font-size: 18px;
+		font-weight: 700;
+	}
+	input[type='text'],
+	input[type='password'],
+	input[type='tel'],
+	input[type='url'],
+	input[type='email'],
+	input[type="search"],
+	input[type='number'],
+	textarea {
+		width: 100%;
+		-webkit-appearance: none;
+		.ie7 & {
+			width: 96%;
+		}
+	}
+	label {
+		margin: 0.5em 0 0.2em 0;
+		display: block;
+	}
+	input {
+		&[type='text'],
+		&[type='search'],
+		&[type='password'],
+		&[type='tel'],
+		&[type='url'],
+		&[type='email'],
+		&[type='number'] {
+			.text-inputs;
+			.box-sizing-reset;
+		}
+	}
+	textarea {
+		.text-inputs;
+		min-height:8em;
+		resize:vertical;
+	}
+	.col {
+		select {
+			width: 100%;
+		}
+	}
+	button,
+	input[type="submit"],
+	input[type="button"] {
+		.btn();
+	}
+	input {
+		&[type='checkbox'],
+		&[type='radio'] {
+			clear: left;
+			float: left;
+			margin: 0.2em 0.7em;
+			&:focus {
+				outline: 1px solid @grey-black;
+			}
+		}
+	}
+	.checkbox_label {
+		margin: 0 0 0 26px !important;
+		float: none !important;
+		width: auto !important;
+		display: block !important;
+	}
+	.placeholder-text(@grey, Helvetica, 1em);
+}
+
+.form-in-new-window form {
+	background: rgba(255,255,255,0.9);
+	border-radius: 2px;
+	padding: 0 1em;
+}
+
+.form-in-new-window {
+	max-width: 960px;
+	width: 96%;
+	margin: 0 auto;
+	background-image: none;
+	.logo-container {
+		display: none;
+	}
+}
+
+.form-in-new-window .content-container {
+	width: 100%;
+}
+
+.form-in-new-window legend {
+	padding: 0;
+	color: @text-color;
+}
+
+.form-in-new-window .labelman {
+	border-top: none !important;
+}
+
+.form-in-new-window h1 {
+	border-bottom: 5px solid @darkest-grey;
+	line-height: normal;
+	margin-bottom: 0;
+}
+
+.form-in-new-window .progressborder {
+	margin-top: 1em;
+}
+
+.form-in-new-window {
+	.logo-on-form {
+		margin-top: 1.5em;
+	}
+	.button_row {
+		border-top: solid 3px @lightest-grey;
+		input {
+			width: auto;
+			display: block;
+			@media @mobile {
+				/*width: 100%;
+				float: none !important;*/
+			} 
+		}
+		a {
+			&[title="Edit previous Page"] {
+				@media @mobile {
+					/*width: 100%;
+					margin-bottom: 2em;
+					padding: 0.7em 0 !important;
+					text-align: center;*/
+				}
+			}
+		}
+	}
+	table {
+		@media @mobile {
+			font-size: 70% !important;
+		}
+	}
+}
+
+.form-in-new-window form{
+	.row{
+		.clearfix;
+		//border-top: 1px solid @light-grey;
+		padding: 0.5em 0;
+		label{
+			margin-top: 0;
+			vertical-align: top;
+		}
+		table {
+			th {
+				text-align: left;
+				input[type="submit"] {
+					.btn(@bright-white);
+					color: @text-color;
+				}
+			}
+			tr {
+				padding: 0.5em 0;
+			}
+		}
+	}
+	.button_row{
+		.clearfix;
+		//background: @bright-white;
+		margin: 0; // undo the padding on fieldset
+		padding: 1em 0;
+		border-top: solid 3px @lightest-grey;
+		.ie7 & {
+			margin: 0;
+		}
+		input {
+			float: right;
+			margin-top: 0.4em;
+			line-height: 1.4;
+			&#segment_summary, &#save_and_edit_later {
+				float: left;
+				margin-right: 1em;
+				.btn(@darkest-grey);
+				line-height: 1.4;
+			}
+		}
+		a {
+			&[title="Edit previous Page"] {
+				.btn(@darkest-grey);
+				float: left;
+				margin-right: 1em;
+				margin-top: 0.4em;
+				text-decoration: none !important;
+			}
+		}
+		@media @mobile {
+			border: none;
+			background: none;
+			input {
+				padding: 0.7em !important;
+			}
+		}
+	}
+}
+
+.form-in-new-window #form_summary_legend {
+	margin: 1em 0;
+	legend {
+		float: left;
+		margin: 0.6em 2em 0.6em 0;
+	}
+	.incomplete, .maybe, .done {
+		float: left;
+		margin-right: 2.5em;
+	}
+	img{
+		margin-right: 0.5em;
+		margin-top: -0.4em;
+	}
+}
+
+.form-in-new-window table#form_summary {
+	tbody th {
+		text-align: left;
+	}
+	tr.button_row {
+		form {
+			padding: 0.5em;
+			#markAsComplete {
+				float: right;
+				@media @mobile {
+					padding: 0.8em 0;
+					margin: 0.5em 0;
+				}
+			}
+			#edit_later {
+				margin-right: 1em;
+				.btn(@darkest-grey);
+				@media @mobile {
+					padding: 0.8em 0;
+					margin: 0.5em 0;
+				}
+			}
+			a {
+				.inline-block;
+				margin-right: 1em;
+			}
+		}
+	}
+}
+
+// Multi-page forms progress bar
+.form-in-new-window .progressborder {
+	border: 1px solid @light-grey;
+	//.border-radius(3px);
+	.progressbar{
+		//background: @lightest-grey;
+		padding: 0.5em;
+		text-align: right;
+	}
+	p{
+		margin: 0;
+	}
+}
+
+.form-in-new-window #form_complete {
+	input[type="email"] {
+		float: left;
+		width: 60%;
+		margin-right: 0.8em;
+		@media @mobile {
+			width: 100%;
+			float: none;
+			margin-bottom: 1em;
+		}
+	}
+	.input-name-forms-finished-email {
+		margin-top: 2em;
+	}
+}
+
+.form-in-new-window .progressborder {
+	margin-bottom: 1.5em;
+	.progressbar {
+		background: @lighter-grey;
+	}
+	
+	
+}
+
+/*- Only when a form is in a single placement row, and not in mobile view, use row layout -*/
+.form-in-new-window{
+	.form{
+		fieldset,
+		legend {
+			border: none !important;
+		}
+		.row{
+			display: table;
+			table-layout: fixed;
+			width: 100%;
+		}
+		label,
+		.label {
+			display:table-cell;
+			width: 26%;
+			vertical-align: top;
+		}
+		.field {
+			display: table-cell;
+			padding: 0 0 0 2em;
+			width: 74%;
+			@media @mobile {
+				width: 100%;
+				padding: 0;
+			}
+			br {
+				display: none;
+			}
+			label {
+				display: inline;
+				padding-left: 0.5em;
+			}
+			.ie7 & {
+				padding: 0;
+				width: 99%;
+			}
+		}
+		select{
+			width: auto;
+		}
+		@media @mobile{
+			.row,
+			label,
+			.label{
+				width: auto;
+				display: block;
+			}
+			.field {
+				display: block;
+				padding: 0;
+			}
+			select{
+				width: 100%;
+			}
+			.button_row {
+				input {
+					margin-bottom: 0.5em;
+					&#segment_summary {
+						//margin-top: 2em;
+					}
+				}
+			}
+		}
+	}
+}
+
+/*TEMPORARY FIX FOR FORMS THING*/
+.form-in-new-window .main-editor-output {
+	#container.form-auth-wrapper {
+		display: none;
+	}
+}
+
+.form-in-new-window #classic-form-0 .matrixQuestions thead tr td, 
+.form-in-new-window #classic-form-0 .matrixQuestions thead tr th {
+	background: #f2f2f2;
+	color: #444;
+	border-right: solid 1px #bbb;
+	border-bottom: solid 1px #bbb;
+	padding: 1em;
+	font-weight: 400
+}
+.form-in-new-window #classic-form-0 .matrixQuestions thead tr th:last-child {
+	border-right: none
+}
+.form-in-new-window #classic-form-0 .matrixQuestions tbody tr:nth-child(even) td {
+	background: 0 0
+}
+.form-in-new-window #classic-form-0 .matrixQuestions tbody tr:focus th,
+.form-in-new-window #classic-form-0 .matrixQuestions tbody tr:hover th {
+	background: #eaeaea
+}
+.form-in-new-window #classic-form-0 .matrixQuestions tbody tr:focus td,
+.form-in-new-window #classic-form-0 .matrixQuestions tbody tr:hover td {
+	background: #f2f2f2
+}
+.form-in-new-window #classic-form-0 .matrixQuestions tbody tr td,
+.form-in-new-window #classic-form-0 .matrixQuestions tbody tr th{
+	-webkit-transition: background .3s ease-in-out;
+	transition: background .3s ease-in-out;
+	border-bottom: solid 1px #ddd
+}
+.form-in-new-window #classic-form-0 .matrixQuestions tbody tr th {
+	width: 50%;
+	padding: 1em;
+	background: #f2f2f2;
+	color: #444;
+	font-weight: 400
+}
+.form-in-new-window #classic-form-0 .matrixQuestions tbody tr td {
+	border-left: solid 1px #ddd
+}
+.form-in-new-window #classic-form-0 table caption {
+	text-align: left
+}
+.form-in-new-window #classic-form-0 table tbody tr th {
+	background: #f2f2f2;
+	color: #444;
+	border-right: solid 1px #bbb;
+	border-bottom: solid 1px #bbb;
+	padding: .5em;
+	font-weight: 400
+}
+.form-in-new-window #classic-form-0 table tbody tr th:last-child {
+	border-right: none
+}
+.form-in-new-window #classic-form-0 table tbody tr th input[value="Add A Row"],
+.form-in-new-window #classic-form-0 table tbody tr td input[value="Add A Row"] {
+	background-image: url(/base-install/images/_site/icons/add.png)!important;
+	background-color: #ffffff !important;
+}
+.form-in-new-window #classic-form-0 table tbody tr input[type=submit] {
+	text-indent: -9999px;
+	background-repeat: no-repeat!important;
+	background-position: center center!important;
+	background-size: 70%!important
+}
+.form-in-new-window #classic-form-0 table tbody tr input[type=submit]:active,
+.form-in-new-window #classic-form-0 table tbody tr input[type=submit]:focus,
+.form-in-new-window #classic-form-0 table tbody tr input[type=submit]:hover{
+	background-color: #ddd
+}
+.form-in-new-window #classic-form-0 table tbody tr:nth-child(even) td {
+	background: 0 0
+}
+.form-in-new-window #classic-form-0 table tbody tr:focus th,
+.form-in-new-window #classic-form-0 table tbody tr:hover th {
+	background: #eaeaea
+}
+.form-in-new-window #classic-form-0 table tbody tr:focus td,
+.form-in-new-window #classic-form-0 table tbody tr:hover td {
+	background: #f2f2f2
+}
+.form-in-new-window #classic-form-0 table tbody tr td {
+	-webkit-transition: background .3s ease-in-out;
+	transition: background .3s ease-in-out;
+	border-bottom: solid 1px #ddd;
+	border-left: solid 1px #ddd
+}
+.form-in-new-window #classic-form-0 table tbody tr td br {
+	display: none;
+}
+.form-in-new-window #classic-form-0 table tbody tr td input[value=Delete] {
+	background-color: #f2f2f2;
+	background-image: url(/base-install/images/_site/icons/remove.png)!important
+}
+.form-in-new-window #classic-form-0 table tbody tr td select {
+	float: left;
+	padding: .2em 0
+}
+.form-in-new-window #classic-form-0 table tbody tr td .form-date-input-year {
+	float: left;
+	width: 70px
+}
+.form-in-new-window #classic-form-0 table tbody tr td:first-child {
+	border-left: none
+}
+
+.form-in-new-window legend {
+	color: #444444;
+}
+
+.form_window_container {
+	#form_window_head {
+		margin-top: 1em;
+		padding-top: 160px;
+		background-image: url("/base-install/images/main-logo/company-logo.png");
+		background-position: left 32px;
+		background-repeat: no-repeat;
+		//background-size: 200px;
+		h1 {
+			margin: 0;
+			border: none;
+			font-weight: 700;
+			font-size: 22px;
+			padding: 0.4em 0.4em 0.3em 0.4em;
+			margin-top: 0.5em;
+			color: @text-color;
+		}
+	}
+	form {
+		margin-top: 0;
+		padding: 0;
+	}
+}
+
+/*1120*/

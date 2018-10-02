@@ -1,0 +1,109 @@
+#fontsizedown {
+	background-image: url("@{standard-images-url}access-bar/textdown.png") !important;
+	.bg-pos();
+}
+#fontsizeup {
+	background-image: url("@{standard-images-url}access-bar/textup.png") !important;
+	.bg-pos();
+}
+#webpagecontrast0 {
+	background-image: url("@{standard-images-url}access-bar/contrast-normal.png") !important;
+	.bg-pos();
+}
+#webpagecontrast1 {
+	background-image: url("@{standard-images-url}access-bar/contrast-soft.png") !important;
+	.bg-pos();
+}
+#webpagecontrast2 {
+	background-image: url("@{standard-images-url}access-bar/contrast-high.png") !important;
+	.bg-pos();
+}
+
+#accessibility-controls {
+	.access-controls-wrapper {
+		.clearfix;
+		padding: 0.4em (@placement-gap/2);
+		ol {
+			.list-reset;
+			font-size:@smaller-font;
+			float: left;
+			li {
+				.list-reset;
+				float: left;
+				margin-right: 1em;
+			}
+		}
+		@media @mobile {
+			display: none;
+		}
+	}
+	#accessbar {
+		form {
+			float: left;
+		}
+		input[type="submit"] {
+			.ir;
+			.inline-block;
+			width:@small-icon-size;
+			height:@small-icon-size;
+			text-indent: -9999px;
+			padding: 0;
+			.ie7 & {
+				float: left;
+				text-transform: capitalize;
+				margin-right: 0.2em;
+			} 
+			&:focus {
+				outline: 1px solid @light-grey;
+			}
+		}
+	}
+	.access-options-label {
+		float: left;
+		margin-right: 0.2em;
+	}
+}
+
+#change-contrast .contrast-switch when(@contrast-tooltips = yes) {
+	position: relative;
+	&:before {
+		position: absolute;
+		top: 100%;
+		margin-top: 0.33em;
+		color: @bright-white;
+		background: fadeout(@black, 5%);
+		border-radius: 4px;
+		padding: 0.75em;
+		text-align: center;
+		opacity: 0;
+		transition: opacity 0.33s ease-in-out;
+		font-size: 14px;
+		line-height: 14px;
+		width: 150px;
+		left: 50%;
+		margin-left: -85.5px;
+		pointer-events: none;
+	}
+	&.webpagecontrast0-wrap {
+		&:before {
+			content: "Normal contrast"
+		}
+	}
+	&.webpagecontrast1-wrap {
+		&:before {
+			content: "Soft contrast"
+		}
+	}
+	&.webpagecontrast2-wrap {
+		&:before {
+			content: "High contrast"
+		}
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		&:before {
+			opacity: 1;
+		}
+	}
+}

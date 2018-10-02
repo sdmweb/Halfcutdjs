@@ -1,0 +1,233 @@
+.reg-toolkit-wrapper {
+	//EVERYTHING IS CONTAINED WITHIN THIS WRAPPER (I think)
+	
+	//BACK BUTTON
+	.rt-back {
+		display: inline-block;
+		margin: 0.5em 0;
+	}
+	
+	//TOOLKIT SEARCH
+	.reg-toolkit-search {
+		margin-bottom: 0.75em;
+		padding-bottom: 0.75em;
+		form {
+			legend {
+				font-size: 16px;
+				font-weight: 700;
+				line-height: 1.2;
+				margin-bottom: 0.5em;
+			}
+			.row {
+				overflow: hidden;
+				margin-bottom: 0.5em;
+				label {
+					display: none;
+				}
+				.field-value {
+					display: block;
+					input[type="search"],
+					input[type="text"] {
+						width: 100%;
+						box-sizing: border-box;
+					}
+				}
+				.rt_search_type {
+					float: left;
+					label {
+						display: block;
+					}
+				}
+			}
+			.btn_row {
+				clear: both;
+			}
+		}
+	}
+	
+	//SEARCH RESULTS
+	.tenants-results-wrapper {
+		.result-row {
+			padding: 0.5em 1em;
+			margin-bottom: 1em;
+			border: solid 1px @lighter-grey;
+			border-radius: 2px;
+			border-top: solid 4px @red;
+			&.login-enabled {
+				border-top: solid 4px @green;
+			}
+			ul {
+				.list-reset;
+			}
+			.result-tenant-actions {
+				float: right;
+				padding-top: 0.5em;
+				@media only screen and (max-width: 768px) {
+					float: none;
+				}
+				legend {
+					display: none;
+				}
+				button {
+					margin-left: 0.5em;
+					@media only screen and (max-width: 768px) { 
+						margin-left: 0;
+						margin-right: 0.5em;
+						margin-bottom: 0.5em;
+						display: inline-block;
+						font-size: 90%;
+					}
+					&.login-as-user,
+					&.activate {
+						#container & {
+							.btn(@green);
+						}
+					}
+				}
+			}
+			.result-tenant-details,
+			.result-tenant-groups,
+			.result-tenant-status,
+			.result-tenancies {
+				margin-bottom: 1em;
+				.label {
+					font-weight: 700;
+				}
+			}
+			.result-tenant-details {
+				margin-bottom: 0;
+			}
+			.result-tenant-groups {
+				
+			}
+			.result-tenant-status {
+				padding: 0.5em 0;
+				margin: 0.5em 0;
+				border-top: solid 1px @lighter-grey;
+				border-bottom: solid 1px @lighter-grey;
+				> span {
+					margin-right: 2.5em;
+					@media only screen and (max-width: 768px) {
+						display: block;
+						margin-right: 0;
+						margin: 0.25em 0;
+					}
+					&.login-enabled,
+					&.email-confirmed {
+						font-weight: 700;
+						color: @green;
+					}
+					&.login-disabled,
+					&.email-unconfirmed {
+						font-weight: 700;
+						color: @red;
+					}
+				}
+			}
+			.result-tenancies {
+				margin-bottom: 0;
+				h3 {
+					margin: 0;
+				}
+				.list-tenancies {
+					overflow: hidden;
+					font-size: 90%;
+					.result-tenancy-details {
+						float: left;
+						width: 33.333%;
+						padding-right: 1em;
+						padding-left: 1em;
+						border-right: solid 1px @lighter-grey;
+						@media only screen and (max-width: 768px) {
+							width: 100%;
+							padding-right: 0;
+							padding-left: 0;
+							border-right: 0;							
+						}
+						&:last-child {
+							margin-right: 0;
+							padding-right: 0;
+							border-right: none;
+						}
+						&:first-child {
+							padding-left: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	//LOGGED IN AS
+	.logged-as-wrapper {
+		ul {
+			.list-reset();
+		}
+		.label {
+			font-weight: 700;
+		}
+	}
+	
+	//FORM STYLING
+	.form {
+		.row {
+			.field {
+				input[type="text"],
+				input[type="password"],
+				input[type="email"] {
+					width: 100%;
+					background: @bright-white;
+					border-radius: 2px;
+					box-shadow: none;
+					border: solid 1px @light-grey;
+				}
+			}
+		}
+	}
+}
+
+//MIMIC LOGIN
+.mimic-login {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 0.75em 0;
+	text-align: center;
+	background: @green;
+	color: @bright-white;
+	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.4);
+	a {
+		color: @bright-white;
+		text-decoration: underline;
+		&:hover,
+		&:focus,
+		&:active {
+			text-decoration: none;
+		}
+	}
+	.mimicked-user,
+	.original-user {
+		font-weight: 700;
+	}
+}
+
+//Activate User toolkit
+#container {
+	.reg-toolkit-wrapper {
+		.form {
+			label[for="pass_use_gen"],
+			label[for="pass_use_custom"] {
+				display: block;
+				width: 100%;
+				padding: 0.5em 0;
+				border-top: solid 4px @lightest-grey;
+				font-size: 16px;
+				font-weight: 700;
+				input {
+					margin-left: 0.5em;
+				}
+			}
+		}
+	}
+}

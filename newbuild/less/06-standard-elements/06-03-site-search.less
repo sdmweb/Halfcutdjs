@@ -1,0 +1,126 @@
+.advanced-search {
+	font-size: @smaller-font;
+}
+
+@media @over {
+	.search-type-options {
+		display: inline-block;
+		width: (98%/3);
+	}
+}
+@media @mobile {
+	.search-type-options {
+		display: inline-block;
+		width: (98%/2);
+	}
+}
+
+#container {
+	.main-content {
+		.site-search {
+			.content-headline {
+				display: block;
+			}
+			.type-select-buttons,
+			.category-search-filter {
+				margin-top: 0.6em;
+			}
+			input[type='checkbox']{
+				margin: 0.2em 0.4em;
+			}
+			.type-select-buttons {
+				input[type='radio']{
+					float: none;
+					margin: 0 0.4em;
+				}
+				label {
+					display: inline;
+					margin-right: 0.7em;
+				}
+			}
+		}
+	}
+	
+	.site-search {
+		.content-headline {
+			display: none;
+		}
+		input[type="submit"],
+		input[type="search"],
+		input[type="text"]{
+			width: auto;
+		}
+		.global-pagination {
+			padding: 1em 0;
+			.per-page-label,
+			input[type="submit"]{
+				margin-left: 0.5em;
+			}
+			select {
+				width: auto;
+			}
+		}
+		.input-name-pagination-page,
+		.input-name-pagination-per-page {
+			.inline-block;
+		}	
+		.site-search-results,
+		.search-result-item,
+		.page-url-list,
+		.page-url-list li {
+			.list-reset;
+		}
+		.search-result-item {
+			position: relative;
+			padding: 1em;
+			&:nth-child(odd){
+				background: @off-white;
+			}
+			h3 {
+				margin-top: 0;
+			}
+		}
+		.entity-type {
+			float: right;
+			font-size: @smaller-font;
+			text-transform: capitalize;
+			margin-right: 115px;
+		}
+		.search-ranking-bar {
+			position: absolute;
+			top: 1.3em;
+			right: 1em;
+			.border-radius(2px);
+			overflow: hidden;
+			width: 100px;
+			border: 1px solid @grey;
+			.search-ranking-score {
+				height: 8px;
+				background: @grey;
+			}
+		}
+		.page-url-list {
+			font-size: @small-font;
+		}
+		@media @mobile {
+			.global-pagination {
+				.per-page-label,
+				input[type="submit"]{
+					margin-left: 0;
+				}
+				select {
+					width: 100%;
+					margin-bottom: 0.7em;
+				}
+			}	
+			.search-ranking-bar {
+				margin-top: 0.7em;
+				position: static;
+				width: 100%;
+			}
+			.entity-type {
+				margin-right: 0;
+			}
+		}
+	}
+}

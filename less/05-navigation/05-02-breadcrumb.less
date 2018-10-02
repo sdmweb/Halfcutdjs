@@ -1,0 +1,43 @@
+.content-container {
+	&.breadcrumb {
+		width: auto;
+		padding: 1em 0.5em 0.8em 0.5em;
+		margin: 0 0.5em;
+		border-bottom: solid 1px @lighter-grey;
+		#breadcrumbs {
+			.list-reset;
+			.now_viewing {
+				display: none;
+			}
+			li {
+				.list-reset;
+				float: left;
+				margin-right: 0.3em;
+				&:before {
+					.add-icon("f105");
+					float: right;
+					font-size: 22px;
+					margin-left: 0.5em;
+					margin-right: 0.2em;
+					position: relative;
+					top: -2px;
+				}
+				a {
+					color: @text-color;
+					text-decoration: none;
+					&:hover,
+					&:focus,
+					&:active {
+						text-decoration: underline;
+					}
+				}
+				&.current {
+					color: @color1;
+					&:before {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,296 @@
+.folder-breadcrumb {
+	padding: 0 0 0.8em 22px;
+	background-image: url("@{standard-images-url}media-browser/folder.png");
+	.bg-pos(no-repeat, left, 1px);
+}
+
+#container {
+	.media-search-inputs {
+		.clearfix;
+		input[type="search"],
+		input[type="text"],
+		input[type="submit"],
+		label {
+			float: left;
+		}
+		input[type="submit"]{
+			width: auto;
+			margin: 3px 0 0 0.5em;
+		}
+		input[type="checkbox"]{
+			margin-top: 0.6em;
+		}
+		label {
+			font-size: @small-font;
+			margin-top: 0.4em;
+		}
+		input[value="description"]{
+			clear: none;
+		}
+		.ie7 & {
+			input[value="display_name"]{
+				clear: none;
+			}
+		}
+	}
+}
+
+.results-filter-options {
+	margin: 0.5em 0;
+	span {
+		display: none;
+	}
+	.status-filters {
+		display: block;
+		a {
+			padding-left: 21px;
+			.bg-pos(no-repeat,left,center);
+			margin-right: 0.5em;
+		}
+	}
+}
+
+.ms-current {
+	background-image: url("@{standard-images-url}media-browser/status-current.png");
+}
+.ms-underreview,
+.ms-under-review {
+	background-image: url("@{standard-images-url}media-browser/status-under-review.png");
+}
+.ms-expired {
+	background-image: url("@{standard-images-url}media-browser/status-expired.png");
+}
+.ms-archived {
+	background-image: url("@{standard-images-url}media-browser/status-archived.png");
+}
+.ms-all {
+	padding-left: 0;
+}
+
+.media-display-table {
+	thead {
+		a {
+			text-decoration: none;
+		}
+		.mb-sort {
+			padding:0 0 0 20px;
+			.bg-pos(no-repeat,left,center);
+			&.asc {
+				background-image: url("@{standard-images-url}arrows/arrow-up.png");
+			}
+			&.desc {
+				background-image: url("@{standard-images-url}arrows/arrow-down.png");
+			}
+		}
+	}
+	.media-status {
+		padding-left: 21px;
+		.bg-pos(no-repeat,left,center);
+	}
+}
+
+@media @mobile {
+	.results-filter-options {
+		display: none;
+	}
+	.media-history {
+		display: none;
+	}
+	.media-display-table {
+		th,
+		td {
+			&:first-child {
+				display: none;
+			}
+			&:nth-child(2) {
+				display: none;
+			}
+			&:nth-child(4) {
+				display: none;
+			}
+			&:last-child {
+				display: none;
+			}
+		}
+	}
+}
+
+#container {
+	input[name="media_search_term"]{
+		width: auto;
+	}
+}
+
+#container {
+	.mb-fldr-lst {
+		a {
+			text-decoration: none;
+		}
+		input[type="search"],
+		input[type="text"]{
+			width: 50%;	
+		}
+		input[type="submit"]{
+			width: auto;
+		}	
+		.mb-folders-list,
+		.mb-folder-item,
+		.sub-list ul,
+		.sub-list li {
+			.list-reset;
+		}
+		.md-lst-wrp {
+			margin-top: 0.5em;
+		}
+		.sub-list,
+		.sub-list ul {
+			margin-left: 1.2em;
+		}
+		.back-to-top-folder {
+			display: block;
+			.bg-pos(no-repeat, left, center);
+			padding: 0.4em 0 0.4em 22px;
+			background-image: url("@{standard-images-url}media-browser/folder-tree.png");
+		}
+		.vw-fldr {
+			.inline-block;
+			margin-left: 2px;
+			padding-top: 2px;
+		}
+		.xpnd-fldr {
+			.inline-block;
+			width: 30px;
+			height: 20px;
+			background-image: url("@{standard-images-url}media-browser/folder-closed.png");
+			.bg-pos(no-repeat, center, 1px);
+			vertical-align: middle;
+			margin-right: 2px;
+			&.open {
+				background-image: url("@{standard-images-url}media-browser/folder-open.png");
+			}
+		}
+		.root-folder {
+			> .xpnd-fldr {
+				background-image: url("@{standard-images-url}media-browser/folder-top.png");
+			}
+		}
+		.empty {
+			> .xpnd-fldr {
+				background-image: url("@{standard-images-url}media-browser/folder.png");
+				.bg-pos(no-repeat, 10px, 1px);
+			}
+		}
+	}
+}
+
+#file-viewer {
+	ul,
+	li {
+		.list-reset;	
+	}
+	.media-status {
+		margin-bottom: 0.5em;
+		span {
+			padding-left: 21px;
+			.bg-pos(no-repeat,left,center);
+		}
+	}
+}
+
+.status-download-information {
+	float: right;
+	width: 50%;
+}
+
+.media-information {
+	float: left;
+	width: 50%;
+}
+
+@media @mobile {
+	.status-download-information,
+	.media-information {
+		float: none;
+		width: auto;
+	}
+}
+
+.media-history {
+	clear: both;
+	margin-top: 1em;
+	float: left;
+	width: 100%;
+	.ie7 & {
+		float: none;
+	}
+	.results-count {
+		display: none;
+	}
+}
+
+.media-format,
+.media-file-format .media-info {
+	.inline-block;
+	padding-left: 28px;
+	height: 24px;
+	line-height: 24px;
+	.bg-pos(no-repeat, 1px, center);
+}
+
+.format-avi,
+.format-mp4,
+.format-swf,
+.format-mov,
+.format-flv,
+.format-wmv {
+	background-image: url("@{standard-images-url}media-browser/avi.png");
+}
+
+.format-aac,
+.format-mp3,
+.format-wma,
+.format-wav {
+	background-image: url("@{standard-images-url}media-browser/mp3.png");
+}
+
+.format-png {
+	background-image: url("@{standard-images-url}media-browser/png.png");
+}
+
+.format-gif,
+.format-jpeg,
+.format-jpg {
+	background-image: url("@{standard-images-url}media-browser/jpg.png");
+}
+
+.format-doc,
+.format-docx {
+	background-image: url("@{standard-images-url}media-browser/doc.png");
+}
+
+.format-pdf {
+	background-image: url("@{standard-images-url}media-browser/pdf.png");
+}
+
+.format-ppsx,
+.format-ppt,
+.format-pptx {
+	background-image: url("@{standard-images-url}media-browser/ppt.png");
+}
+
+.format-xls,
+.format-xlsx {
+	background-image: url("@{standard-images-url}media-browser/xls.png");
+}
+
+.format-rtf {
+	background-image: url("@{standard-images-url}media-browser/rtf.png");
+}
+
+.format-csv {
+	background-image: url("@{standard-images-url}media-browser/csv.png");
+}
+
+.format-txt {
+	background-image: url("@{standard-images-url}media-browser/txt.png");
+}

@@ -1,0 +1,164 @@
+@custom-font:"Arial";
+
+.sans-serif(@weight:normal, @size:1.4em, @leading:140%) {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;		
+	font-size: @size;
+	font-weight: @weight;
+	line-height: @leading;
+}
+.serif(@weight:normal, @size:1.4em, @leading:140%) {
+ 	font-family: "Georgia", Times New Roman, Times, sans-serif;
+	font-size: @size;
+	font-weight: @weight;
+	line-height: @leading;
+}
+.customfont(@weight:normal, @size:1.4em, @leading:140%) {
+	font-family:@custom-font;
+	font-size:@size;
+	font-weight:@weight;
+	line-height:@leading;
+}
+
+@base-font:1em;
+    
+@largest-font:190%;
+@larger-font:150%;
+@large-font:120%;
+@normal-font:100%;
+@small-font:90%;
+@smaller-font:80%;
+@smallest-font:70%;
+
+h1 {
+
+}
+h2 {
+
+}
+h3 {
+
+}
+h4 {
+
+}
+h5 {
+
+}
+h6 {
+
+}
+
+p {
+	margin:0.6em 0;
+	line-height:140%;
+}
+
+blockquote {
+	margin: 1em 0;
+	padding: 1em;
+	background: @off-white;
+	border-top: 1px solid @dark-grey;
+	border-bottom: 1px solid @dark-grey;
+}
+
+ul,
+ol {
+	margin:0.1em 0;
+	padding:0 2em;
+	li {
+		margin:0.2em 0;
+	}
+}
+
+
+// Define the font paths
+@fa-font-path:"../fonts/";
+
+@font-face {
+  font-family: 'Font Awesome 5 Pro';
+  font-style: normal;
+  font-weight: 900;
+  src: url('@{fa-font-path}/fa-solid-900.eot');
+  src: url('@{fa-font-path}/fa-solid-900.eot?#iefix') format('embedded-opentype'),
+    url('@{fa-font-path}/fa-solid-900.woff2') format('woff2'),
+    url('@{fa-font-path}/fa-solid-900.woff') format('woff'),
+    url('@{fa-font-path}/fa-solid-900.ttf') format('truetype'),
+    url('@{fa-font-path}/fa-solid-900.svg#fontawesome') format('svg');
+}
+
+@font-face {
+  font-family: 'Font Awesome 5 Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: url('@{fa-font-path}/fa-light-300.eot');
+  src: url('@{fa-font-path}/fa-light-300.eot?#iefix') format('embedded-opentype'),
+    url('@{fa-font-path}/fa-light-300.woff2') format('woff2'),
+    url('@{fa-font-path}/fa-light-300.woff') format('woff'),
+    url('@{fa-font-path}/fa-light-300.ttf') format('truetype'),
+    url('@{fa-font-path}/fa-light-300.svg#fontawesome') format('svg');
+}
+
+@font-face {
+  font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
+  font-weight: normal;
+  src: url('@{fa-font-path}/fa-brands-400.eot');
+  src: url('@{fa-font-path}/fa-brands-400.eot?#iefix') format('embedded-opentype'),
+    url('@{fa-font-path}/fa-brands-400.woff2') format('woff2'),
+    url('@{fa-font-path}/fa-brands-400.woff') format('woff'),
+    url('@{fa-font-path}/fa-brands-400.ttf') format('truetype'),
+    url('@{fa-font-path}/fa-brands-400.svg#fontawesome') format('svg');
+}
+
+@font-face {
+  font-family: 'Font Awesome 5 Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('@{fa-font-path}/fa-regular-400.eot');
+  src: url('@{fa-font-path}/fa-regular-400.eot?#iefix') format('embedded-opentype'),
+    url('@{fa-font-path}/fa-regular-400.woff2') format('woff2'),
+    url('@{fa-font-path}/fa-regular-400.woff') format('woff'),
+    url('@{fa-font-path}/fa-regular-400.ttf') format('truetype'),
+    url('@{fa-font-path}/fa-regular-400.svg#fontawesome') format('svg');
+}
+
+@font-face {
+  font-family: 'Font Awesome 5 Pro';
+  font-style: normal;
+  font-weight: 900;
+  src: url('@{fa-font-path}/fa-solid-900.eot');
+  src: url('@{fa-font-path}/fa-solid-900.eot?#iefix') format('embedded-opentype'),
+    url('@{fa-font-path}/fa-solid-900.woff2') format('woff2'),
+    url('@{fa-font-path}/fa-solid-900.woff') format('woff'),
+    url('@{fa-font-path}/fa-solid-900.ttf') format('truetype'),
+    url('@{fa-font-path}/fa-solid-900.svg#fontawesome') format('svg');
+}
+
+// Font Awesome (better: more glyphs, more free-ness)
+.fonticon {
+	font-family:'Font Awesome 5 Pro';
+	font-style:normal;
+	font-weight:normal;
+	line-height:1;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+
+// Display icons automatically
+[data-icon]:before {
+	content: attr(data-icon);
+	speak: none; // Not to be trusted, but hey.
+	&:extend(.fonticon);
+}
+
+.add-icon(@icon-code) {
+	font-family:'Font Awesome 5 Pro';
+	font-style:normal;
+	font-weight:normal;
+	line-height:1;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+
+	content:"\@{icon-code}";
+	display:inline-block;
+}

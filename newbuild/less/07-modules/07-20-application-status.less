@@ -1,0 +1,200 @@
+/*==== APPLICATION STATUS STYLES ====*/
+
+// Define variables
+@application-width:110px;
+@application-img-width:95px;
+@application-img-height:95px;
+@application-panel-height:14em;
+
+@small-icon-size:18px;
+@standard-icon-size:24px;
+@large-icon-size:32px;
+@larger-icon-size:48px;
+@icon-size-xxs:70px;
+
+/* !Indicators such as arrow, app states, etc ----*/	
+#indicators {
+	.app-slider-arrow-left {
+		background-image:url("@{base-images-url}icon/icon-chevron-left.png");
+		.bg-pos();
+	}
+}
+
+// Define mixins
+#app-slider-controls {
+	.prev {
+		background-image:url("@{standard-images-url}slideshows/app-slider/prev-32.png");
+		.bg-pos(no-repeat,left,center);
+		&:hover,
+		&:focus,
+		&:active {
+			background-image:url("@{standard-images-url}slideshows/app-slider/prev-hover-32.png");
+			.bg-pos(no-repeat,left,center);
+		}
+		&.disabled {
+			background-image:url("@{standard-images-url}slideshows/app-slider/prev-disabled-32.png");
+			.bg-pos(no-repeat,left,center);
+		}
+	}
+	.next {
+		background-image:url("@{standard-images-url}slideshows/app-slider/next-32.png");
+		.bg-pos(no-repeat,right,center);
+		&:hover,
+		&:focus,
+		&:active {
+			background-image:url("@{standard-images-url}slideshows/app-slider/next-hover-32.png");
+			.bg-pos(no-repeat,right,center);
+		}
+		&.disabled {
+			background-image:url("@{standard-images-url}slideshows/app-slider/next-disabled-32.png");
+			.bg-pos(no-repeat,right,center);
+		}
+	}
+}
+
+// Define structure
+
+// Avoid namespace clashes with inline-editing
+#container {
+
+	.application-status-wrapper {
+		// ol
+
+		// table
+		.applications-information {
+			//table-layout:fixed;
+			thead {
+				th {
+					text-align: center;
+				}
+			}
+			.favourite-status {
+				position:relative;
+			}
+			td {
+				text-align:center;
+				&:first-child {
+					width: 15%;
+				}
+				.status-online {
+					background: @green;
+					.transition(background, 0.3s);
+					&:hover,
+					&:focus,
+					&:active {
+						background: lighten(@green, 8%);
+					}
+				}
+				.status-warning {
+					background: @amber;
+					.transition(background, 0.3s);
+					&:hover,
+					&:focus,
+					&:active {
+						background: lighten(@amber, 8%);
+					}
+				}
+				.status-offline {
+					background: @red;
+					.transition(background, 0.3s);
+					&:hover,
+					&:focus,
+					&:active {
+						background: darken(@red, 8%);
+					}
+					a {
+						cursor:default;
+						cursor:not-allowed;
+					} 
+				}
+				.link-to-application {
+					//padding: 1em;
+					text-align: center;
+				}
+				.app-image-wrapper {
+					width: 80px;
+					height: 80px;
+					margin: 1em 0;
+					overflow: hidden;
+					.inline-block;
+					img {
+						max-width: 100%;
+						position: relative;
+						top: 50%;
+						.translate(0, -50%);
+						.ie8 & {
+							top: 0;
+							.translate(0, 0);
+						}
+					}
+				}
+			}
+		}
+		
+	}// End application-status-wrapper
+	
+// End #container	
+}
+
+//MINI
+.application-status-wrapper {
+	.content-items-list {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		.list-content-item {
+			transition: transform 0.25s ease-in-out;
+			backface-visibility: hidden;
+			&:hover,
+			&:focus,
+			&:active {
+				transform: scale(1.04);
+				.link-to-application {
+					opacity: 0.6;
+				}
+			}
+			.layout_0_1 .middle &,
+			.layout_1_0 .middle & {
+				flex: 0 1 12.5%;
+				@media @mobile {
+					flex: 0 1 25%;
+				}
+				@media only screen and (max-width: 529px) {
+					flex: 1 1 50%;
+				}
+			}
+			.layout_1_1 .middle & {
+				flex: 0 1 25%;
+				@media only screen and (max-width: 529px) {
+					flex: 1 1 50%;
+				}
+			} 		
+			.col & {
+				flex: 1 1 30%;
+				@media only screen and (max-width: 529px) {
+					flex: 1 1 50%;
+				}
+			}
+			.link-to-application {
+				display: block;
+				overflow: hidden;
+				.box-shadow();
+				border-radius: 4px;
+				transition: opacity 0.25s ease-in-out;
+			}
+			.application-item-name {
+				color: @text-color;
+				text-align: center;
+				display: block;
+				margin-top: 0.5em;
+				text-decoration: none !important;
+			}
+		}
+	}
+	.all-app-link {
+		text-align: center;
+		a {
+			.cta();
+		}
+	}
+}

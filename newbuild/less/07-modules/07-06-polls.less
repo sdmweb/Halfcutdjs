@@ -1,0 +1,46 @@
+.poll-question,
+.poll-question li,
+.poll-results,
+.poll-results li {
+	.list-reset;
+}
+
+.type-poll {
+	input[type="submit"]{
+		margin-top: 1em;
+	}
+	.poll-result-answer {
+		padding-bottom: 0.5em;
+	}
+}
+
+.poll-result-bar {
+	width: 100%;
+	border: 1px solid @light-grey;
+	overflow: hidden;
+	.border-radius(6px);
+	height: 1em;
+	div {
+		background: @light-grey;
+		height: 100%;
+		.border-radius(0 6px 6px 0);
+	}
+}
+
+.ie7 {
+	.poll-question {
+		input[type="radio"]{
+			float: left;
+			position: relative;
+			top: 8px;
+		}
+		label {
+			float: left;
+		}
+	}
+	.type-poll {
+		input[type="submit"]{
+			clear: left;
+		}
+	}
+}

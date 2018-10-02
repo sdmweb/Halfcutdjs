@@ -1,0 +1,146 @@
+@menu-icon-width: 30px;
+@menu-thumb-width: 30px;
+
+.menu,
+.menu li,
+.menu ol {
+	.list-reset;
+	a {
+		&.current,
+		&:hover,
+		&:focus {
+			background: @lightest-grey;
+		}
+	}
+}
+
+.standard-list,
+.description-list {
+	.horizontal-nav;
+	.icon-display {
+		.menu-item-img {
+			.inline-block;
+			width: @menu-icon-width;
+			margin-right: 0.2em;
+		}
+	}
+	.thumbnail-display {
+		.menu-item-img {
+			.inline-block;
+			width: @menu-thumb-width;
+			margin-right: 0.2em;
+		}
+	}
+}
+
+.col {
+	.standard-list,
+	.description-list {
+		.vertical-nav;
+		.icon-display,
+		.thumbnail-display {
+			a {
+				.clearfix;
+			}
+			.menu-item-img {
+				float: right;
+			}
+		}
+	}
+}	
+
+.description-list {
+	.menu-item-desc {
+		font-size: @smaller-font;
+		text-align: center;
+		p {
+			margin-top: 0.2em;
+		}
+	}
+}
+
+.col {
+	.description-list {
+		.menu-item-desc {
+			text-align: left;
+			padding-left: @vertical-sub-space;
+		}
+		.output-level-2 {
+			.menu-item-desc {
+				padding-left: (@vertical-sub-space * 2);
+			}
+		}
+		.output-level-3 {
+			.menu-item-desc {
+				padding-left: (@vertical-sub-space * 3);
+			}
+		}
+		.output-level-4 {
+			.menu-item-desc {
+				padding-left: (@vertical-sub-space * 4);
+			}
+		}
+	}
+}
+
+.pod-menu {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+	.menu-pod {
+		display: table-cell;
+		text-align: center;
+		padding: 1em;		
+	}
+	.content-item-container {
+		border: 1px solid @grey;
+	}
+	.pod-content {
+		padding: 0 0.8em;
+	}
+	@media @mobile {
+		display: block;
+		.menu-pod {
+			display: block;
+		}
+	}
+	.flexbox-legacy &,
+	.flexbox & {
+		.flexbox();
+		.menu-pod {
+			.flexbox();
+			-ms-flex: 0 1 auto;
+		}
+		.content-item-container {
+			.flex(1);
+		}
+		@media @mobile {
+			.flexbox(@dir: column);
+		}
+	}
+}
+
+.ie7 {
+	@pod-count: 3;
+	.pod-menu {
+		.menu-pod {
+			width: (92% / @pod-count); 
+			float: left;
+		}
+	}
+	.col {
+		.pod-menu {
+			.menu-pod {
+				float: none;
+				width: auto;
+			}
+		}
+	}
+}
+
+.col {
+	.pod-menu,
+	.menu-pod {
+		display: block;
+	}
+}

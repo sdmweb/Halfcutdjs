@@ -1,0 +1,122 @@
+@ss-controls-url: "../images/slideshows/controls1-16px-k/";
+@ss-controls-focus-url: "../images/slideshows/controls1-16px-w/";
+
+@cycle-height: 270px;
+
+#slide-controls {
+	.play() {
+		background-image:url("@{ss-controls-url}play.png");
+		&:focus,
+		&:hover,
+		&:active {
+			background-image:url("@{ss-controls-focus-url}play.png");
+		}
+	}
+	.pause() {
+		background-image:url("@{ss-controls-url}pause.png");
+		&:focus,
+		&:hover,
+		&:active {
+			background-image:url("@{ss-controls-focus-url}pause.png");
+		}
+	}
+	.forward() {
+		background-image:url("@{ss-controls-url}forward.png");
+		&:focus,
+		&:hover,
+		&:active {
+			background-image:url("@{ss-controls-focus-url}forward.png");
+		}
+	}
+	.back() {
+		background-image:url("@{ss-controls-url}back.png");
+		&:focus,
+		&:hover,
+		&:active {
+			background-image:url("@{ss-controls-focus-url}back.png");
+		}
+	}
+}
+
+.slider {
+	.list-reset;
+	height: @cycle-height;
+	overflow: hidden;
+	.individual-slides {
+		.list-reset;
+		height: @cycle-height;
+		width: 100%;
+	}
+	.slide-img-wrapper {
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	.slide-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 45%;
+		padding: 1em;
+		background: rgba(255,255,255,0.9);
+		.no-rgba & {
+			background: @bright-white;
+		}
+	}
+	.slide-text-container {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		padding: 0 1em;
+		background: @bright-white;
+	}
+}
+
+.slider-controls,
+.slider-controls li {
+	.list-reset;
+}
+
+.slideshow-wrapper {
+	position: relative;
+}
+
+.slider-controls {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	z-index: 9999;
+	background: @bright-white;
+	padding: 0.3em;
+	li {
+		.inline-block;
+	}
+	.previous,
+	.play-pause,
+	.paused,
+	.next {
+		.bg-pos;
+	}
+	a {
+		display: block;
+		text-indent: -99999px;
+		width: 21px;
+		height: 21px;
+		&.previous {
+			#slide-controls > .back;
+		}
+		&.play-pause {
+			#slide-controls > .pause;
+			margin: 0 3px;
+			&.paused {
+				#slide-controls > .play;
+			}
+		}
+		&.next {
+			#slide-controls > .forward;
+		}
+	}
+}

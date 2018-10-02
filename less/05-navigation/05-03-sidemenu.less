@@ -1,0 +1,40 @@
+@vertical-sub-space: 1em;
+
+.vertical-nav(){
+	li {
+		float: none;
+		display: block;
+	}
+	a {
+		display: block;
+		text-decoration: none;
+		text-align: left;
+		padding: 0.5em @vertical-sub-space;
+	}
+	ol {
+		a {
+			padding-left: (@vertical-sub-space * 2);
+		}
+		ol {
+			a {
+				padding-left: (@vertical-sub-space * 3);
+			}
+			ol {
+				a {
+					padding-left: (@vertical-sub-space * 4);
+				}
+			}
+		} 
+	}
+}
+
+.sidemenu {
+	margin: 0 (@placement-gap / 2);
+	.menu {
+		.vertical-nav;
+	}
+}
+
+.state-submenu {
+	display: none;
+}

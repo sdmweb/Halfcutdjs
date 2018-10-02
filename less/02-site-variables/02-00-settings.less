@@ -1,0 +1,67 @@
+/*==== SET MAIN VARIABLES TO CONTROL PAGE STRUCTURE ====*/
+
+// Universal site widths
+@default-site-width: 96%;
+@max-site-width: 1200px;
+// Really old browser support
+@ie6-site-width: 980px; // Recommend not changing this
+
+// Logo width
+@logo-width: 220px;
+
+// Logo position:  values are: -
+// 1. "left" (default), or
+// 2. "right", or
+// 3. "centered" (placement-rows will go below by default).
+// Values are defined in 04-structure/04-03-header.less
+@logo-position: left;
+
+// Gap between the side columns and the middle column
+@main-column-gap: 0.5em;
+
+// @placement-gap is used throughout the structure and defines the gap between placements in the same placement row, and is often defined as @main-column-gap
+@placement-gap: @main-column-gap;
+
+// Top navigation type:  values are: -
+// 1. "left" (default) (list items float: left),
+// 2. "right" (default) (list items inline-block, and aligned right to preserve ordering),
+// 3. "centered" (display: inline-block),
+// 4. "full-width" (display: table).
+
+// Top nav design
+// 1. "background" - nav item highlights use a background
+// 2. "border" - nav item highlights use a border
+
+@topnav-design: background;
+@topnav-orientation: left;
+@top-nav-bg: @off-white;
+@topnav-pad: (@main-column-gap);
+@topnav-highlight-color: @color1;
+
+// Footer position:  values are: -
+// 1. "sticky" (default):  the footer always appears at the bottom of the page, even on short pages
+// 2. "fluid":  the footer moves up and down with the page
+@footer-pos: sticky;
+// If the value above is "fixed", the footer needs to have a set height
+@footer-height: 180px;
+// Might as well set the footer background here, too
+@footer-bg-col: @darkest-grey;
+
+/*==== SET MAIN DESIGN VARIABLES ====*/
+
+//Accessibility controls
+//collapsed accessibility controls whether or not the accessibility bar is shown as a toggleable dropdown or not.
+//contrast tooltips defines whether or not the contrast switches show tooltips when hovered on.
+@collapsed-accessibility: no;
+@contrast-tooltips: yes;
+
+
+// Set the @base-font-size:  the default is 1em or 16px, and the @media breakpoints are calculated on this basis
+@base-font-size: 14px;
+
+// Set the @links-color:  the default is @color1
+//@standard-link-color: @color1;
+
+// Set the default font families
+@body-font: 'Helvetica', sans-serif;
+@header-font: 'Helvetica', sans-serif;

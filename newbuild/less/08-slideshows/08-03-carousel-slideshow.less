@@ -1,0 +1,76 @@
+@carousel-height: 270px;
+
+.jcarousel-clip {
+	height: @carousel-height;
+	overflow: hidden;
+}
+
+.jcarousel,
+.jcarousel li {
+	.list-reset;
+}
+
+.jcarousel {
+	.slide-img-wrapper {
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	.individual-slides {
+		height: @carousel-height;
+		position: relative;
+	}
+	.slide-text-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 45%;
+		padding: 1em;
+		background: rgba(255,255,255,0.9);
+		.no-rgba & {
+			background: @bright-white;
+		}
+	}
+	.slide-text-container {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		padding: 0 1em;
+		background: @bright-white;
+	}
+}
+
+.jcarousel-prev,
+.jcarousel-next {
+	position: absolute;
+	top: 50%;
+	margin-top: -10px;
+	background: @lighter-grey;
+	.border-radius(50%);
+	padding: 10px;
+	cursor: hand;
+	cursor: pointer;
+	.carousel-control {
+		width: 20px;
+		height: 20px;
+	}
+}
+
+.jcarousel-prev {
+	left: -20px;
+	.carousel-control {
+		#slide-controls > .back;
+		.bg-pos(no-repeat,left, center);
+	}
+}
+
+.jcarousel-next {
+	right: -20px;
+	.carousel-control {
+		#slide-controls > .forward;
+		.bg-pos(no-repeat,right, center);
+	}
+}

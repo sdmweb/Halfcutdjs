@@ -1,0 +1,52 @@
+a {
+	color: @color1;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+	&:focus,
+	&:active {
+		color: contrast(@color1, @bright-white, @text-color);
+		background: @color1;
+		text-decoration: none !important;
+	}
+	&:visited {
+		color: darken(@color1, 15%);
+	}
+}
+
+//Buttons
+.btn(@btn-color: @color1) {
+	border: none;
+	background: @btn-color;
+	padding: 0.5em 1.2em;
+	color: contrast(@btn-color, @text-color, @bright-white);
+	transition: background 0.3s ease-in-out;
+	text-decoration: none;
+	&:hover,
+	&:focus,
+	&:active {
+		background: darken(@btn-color, 15%);
+		text-decoration: none;
+	}
+}
+
+//Calls to action
+.cta(@cta-color: @darker-grey) {
+	background: transparent;
+	display: inline-block;
+	padding: 0.5em 1.2em;
+	text-align: center;
+	border: solid 2px;
+	transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+	border: solid 2px @cta-color;
+	color: @cta-color;
+	text-decoration: none;
+	&:hover,
+	&:focus,
+	&:active {
+		background: @cta-color;
+		color: @bright-white;
+		text-decoration: none;
+	}
+}

@@ -1,0 +1,269 @@
+@charset "utf-8";
+.remove-border-radius {
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+}
+body,
+html {
+  background: black !important;
+}
+#pecr-compliance-banner {
+  background-color: black !important;
+  color: yellow !important;
+}
+#pecr-compliance-banner .pecrsetting-button {
+  background-color: aqua;
+  border: 1px solid aqua;
+  color: black;
+}
+#pecr-compliance-banner .pecrsetting-button:hover,
+#pecr-compliance-banner .pecrsetting-button:focus {
+  background-color: black;
+  color: aqua;
+}
+#container * {
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  -webkit-text-shadow: none !important;
+  -moz-text-shadow: none !important;
+  text-shadow: none !important;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+  color: yellow !important;
+  background: transparent !important;
+  border-color: yellow !important;
+}
+#container mark {
+  background-color: yellow !important;
+  color: black !important;
+}
+#container a,
+#container a span {
+  color: aqua !important;
+  text-decoration: underline !important;
+}
+#container a:hover,
+#container a span:hover,
+#container a:focus,
+#container a span:focus,
+#container a:active,
+#container a span:active {
+  color: black !important;
+  background: aqua !important;
+}
+#container a:hover span,
+#container a span:hover span,
+#container a:focus span,
+#container a span:focus span,
+#container a:active span,
+#container a span:active span {
+  color: black !important;
+  background: aqua !important;
+}
+#container a:visited,
+#container a span:visited {
+  color: yellow !important;
+}
+#container a:visited:hover,
+#container a span:visited:hover,
+#container a:visited:focus,
+#container a span:visited:focus,
+#container a:visited:active,
+#container a span:visited:active {
+  color: black !important;
+}
+#container a:visited:hover span,
+#container a span:visited:hover span,
+#container a:visited:focus span,
+#container a span:visited:focus span,
+#container a:visited:active span,
+#container a span:visited:active span {
+  color: black !important;
+}
+#container a img:hover,
+#container a img:focus {
+  outline: 1px dotted yellow;
+}
+#container .site-search .search-ranking-bar .search-ranking-score {
+  background-color: yellow !important;
+}
+#container table {
+  border: 1px solid yellow;
+}
+#container table th {
+  font-weight: 700 !important;
+  font-size: 120%;
+}
+#container table th,
+#container table td {
+  border-top: 1px solid yellow;
+  border-left: 1px solid yellow;
+}
+#container select:hover option,
+#container select:focus option {
+  background-color: black !important;
+  color: yellow !important;
+}
+#container input[type='checkbox']:hover,
+#container input[type='radio']:hover,
+#container input[type='checkbox']:focus,
+#container input[type='radio']:focus {
+  outline: 1px dotted yellow;
+}
+#container button,
+#container input[type="submit"] {
+  color: aqua !important;
+  border-color: aqua !important;
+}
+#container button:hover,
+#container input[type="submit"]:hover,
+#container button:focus,
+#container input[type="submit"]:focus,
+#container button:active,
+#container input[type="submit"]:active {
+  color: black !important;
+  background: aqua !important;
+}
+#container input[type='text']:hover,
+#container input[type='password']:hover,
+#container input[type='tel']:hover,
+#container input[type='url']:hover,
+#container input[type='email']:hover,
+#container input[type="search"]:hover,
+#container textarea:hover,
+#container select:hover,
+#container input[type='text']:focus,
+#container input[type='password']:focus,
+#container input[type='tel']:focus,
+#container input[type='url']:focus,
+#container input[type='email']:focus,
+#container input[type="search"]:focus,
+#container textarea:focus,
+#container select:focus {
+  border-color: aqua !important;
+}
+#container ::-webkit-input-placeholder {
+  color: yellow !important;
+}
+#container :-moz-placeholder {
+  color: yellow !important;
+}
+#container ::-moz-placeholder {
+  color: yellow !important;
+}
+#container :-ms-input-placeholder {
+  color: yellow !important;
+}
+#container #fontsizedown {
+  background-image: url("../images/access-bar/textdown.png") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+#container #fontsizeup {
+  background-image: url("../images/access-bar/textup.png") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+#container #webpagecontrast0 {
+  background-image: url("../images/access-bar/contrast-normal.png") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+#container #webpagecontrast1 {
+  background-image: url("../images/access-bar/contrast-soft.png") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+#container #webpagecontrast2 {
+  background-image: url("../images/access-bar/contrast-high.png") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+#container .progressborder .progressbar {
+  background: yellow !important;
+}
+#container .progressborder .progressbar * {
+  color: black !important;
+}
+#container .slide-text-container,
+#container .slide-overlay,
+#container .slide-text-overlay {
+  background: black !important;
+}
+#container .slider-controls,
+#container .jcarousel-prev,
+#container .jcarousel-next {
+  background: aqua !important;
+}
+#container .slider-controls a {
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+#container .slider-controls a.previous {
+  background-image: url("../images/slideshows/controls1-16px-k/back.png") !important;
+}
+#container .slider-controls a.previous:focus,
+#container .slider-controls a.previous:hover,
+#container .slider-controls a.previous:active {
+  background-image: url("../images/slideshows/controls1-16px-w/back.png") !important;
+}
+#container .slider-controls a.play-pause {
+  background-image: url("../images/slideshows/controls1-16px-k/pause.png") !important;
+}
+#container .slider-controls a.play-pause:focus,
+#container .slider-controls a.play-pause:hover,
+#container .slider-controls a.play-pause:active {
+  background-image: url("../images/slideshows/controls1-16px-w/pause.png") !important;
+}
+#container .slider-controls a.play-pause.paused {
+  background-image: url("../images/slideshows/controls1-16px-k/play.png") !important;
+}
+#container .slider-controls a.play-pause.paused:focus,
+#container .slider-controls a.play-pause.paused:hover,
+#container .slider-controls a.play-pause.paused:active {
+  background-image: url("../images/slideshows/controls1-16px-w/play.png") !important;
+}
+#container .slider-controls a.next {
+  background-image: url("../images/slideshows/controls1-16px-k/forward.png") !important;
+}
+#container .slider-controls a.next:focus,
+#container .slider-controls a.next:hover,
+#container .slider-controls a.next:active {
+  background-image: url("../images/slideshows/controls1-16px-w/forward.png") !important;
+}
+#container .jcarousel-prev .carousel-control {
+  background-image: url("../images/slideshows/controls1-16px-k/back.png") !important;
+  background-position: left center !important;
+  background-repeat: no-repeat !important;
+}
+#container .jcarousel-prev .carousel-control:focus,
+#container .jcarousel-prev .carousel-control:hover,
+#container .jcarousel-prev .carousel-control:active {
+  background-image: url("../images/slideshows/controls1-16px-w/back.png") !important;
+}
+#container .jcarousel-next .carousel-control {
+  background-image: url("../images/slideshows/controls1-16px-k/forward.png") !important;
+  background-position: right center !important;
+  background-repeat: no-repeat !important;
+}
+#container .jcarousel-next .carousel-control:focus,
+#container .jcarousel-next .carousel-control:hover,
+#container .jcarousel-next .carousel-control:active {
+  background-image: url("../images/slideshows/controls1-16px-w/forward.png") !important;
+}
+#container .poll-result-bar div {
+  background: yellow !important;
+}
+#container #footer-links p {
+  margin: 0.5em 0.1em;
+}
+#container #footer-links p a {
+  padding-left: 0;
+}
+.ie7 #container select,
+.ie7 #container option {
+  background: black !important;
+}

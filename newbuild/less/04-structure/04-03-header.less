@@ -1,0 +1,55 @@
+// Logo position is set in 02-global-variables/02-12-page-structure
+
+// This Guard Expression governs the behaviour of elements when the logo is on the left
+#site-header-row when(@logo-position = left) {
+	.logo-container {
+		float:left;
+		margin-left: 0.5em;
+		// Center the logo on mobile
+		@media @mobile {
+			float:none;
+		}
+	}
+	// By default, no placement-row should cover the logo: if you need different behaviour, just add it here
+	.placement-row-1 {
+		margin-left:(@logo-width + 20px);
+	}
+}
+
+// This Guard Expression governs the behaviour of elements when the logo is on the right
+#site-header-row when(@logo-position = right) {
+	.logo-container {
+		float:right;
+		// Center the logo on mobile
+		@media @mobile {
+			float:none;
+		}
+	}
+	// By default, no placement-row should cover the logo: if you need different behaviour, just add it here
+	.placement-row-1 {
+		margin-right:(@logo-width + 20px);
+	}
+}
+
+// This Guard Expression governs the behaviour of elements when the logo is centered
+#site-header-row when(@logo-position = centered) {
+	#logo {
+		margin-left:auto;
+		margin-right:auto;
+	}
+}
+
+.logo-container {
+	#logo {
+		width:@logo-width;
+		display:block;
+		@media @mobile {
+			margin-left:auto;
+			margin-right:auto;
+		}
+		img {
+			width:100%;
+			height:auto;
+		}
+	}
+}

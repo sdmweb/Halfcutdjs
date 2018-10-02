@@ -1,0 +1,254 @@
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow:none !important;
+        text-shadow: none !important;
+        //font-size: 100% !important;
+     }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+        }
+
+    // Although displaying the href after links is best practice, VerseOne customers tend to want them removed.
+    /*
+a[href]:after {
+        content: " (" attr(href) ")";
+        }
+*/
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+        }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+        }
+
+    pre,
+    blockquote {
+        border: 1px solid #999999;
+        page-break-inside: avoid;
+        }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+        }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+        }
+
+    img {
+        max-width: 100% !important;
+        }
+
+    @page {
+        margin: 0.5cm;
+        }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+        }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+        }
+        
+    .top-navigation, 
+    .nav-toggle, 
+    #accessibility-controls, 
+    #sidemenu,
+    #pecr-compliance-banner,
+    #site-header-row .site-search,
+    #site-header-row .type-textcontent {
+      display: none !important;
+    }
+    
+    .content-wrapper-inner {
+      //margin-top: 4em;
+    }
+    
+    .logo-container {
+      margin: 0 !important;
+      
+    }
+    
+    .layout_1_1 {
+      .wrapper {
+        .middle {
+          margin: 0;
+        }
+      }
+      .col.left {
+        float: none;
+        margin-left: 0;
+        width: auto;
+      }
+      .col.right {
+        float: none;
+        margin-left: 0;
+        width: auto;
+      }
+    }
+    
+    .layout_1_0 {
+      .wrapper {
+        .middle {
+          margin-left: 0;
+        }
+      }
+      .col.left {
+        float: none;
+        margin-left: 0;
+        width: auto;
+      }
+    }
+    
+    .layout_0_1 {
+      .wrapper {
+        .middle {
+          margin-right: 0;
+        }
+      }
+      .col.right {
+        float: none;
+        margin-right: 0;
+        margin-left: 0;
+        width: auto;
+      }
+    }
+    
+    /*#breadcrumbs {
+      margin: 1em 0 0 0;
+    }*/
+    
+    .breadcrumb {
+     // margin: 1em 0 0 0;
+     display: none;
+    }
+    
+    #site-nav-row {
+      margin: 0;
+    }
+    
+    .site-footer {
+      font-size: 70%;
+      img {
+        display: none;
+      }
+    }
+    
+    .container {
+	    padding-bottom: 1em !important;
+    }
+    
+    #site-footer-row {
+      padding: 0;
+      margin: 0;
+      position: static !important;
+    }
+    
+    input[type="submit"] {
+      background: @color1 !important;
+      color: @bright-white !important;
+    }
+    
+    #site-footer-row .lh-footer-text, #site-footer-row .footer-placement .main-editor-output {
+      border-right: none;
+    }
+    
+    #site-article-footer-row {
+      display: none;
+    }
+    
+    .type-propertylist {
+      .ui-tabs-hide {
+        display: block;
+      }
+      .main-image {
+        float: right;
+        width: 35%;
+        margin: 0 0 1em 1em;
+      }
+    }
+    
+    .single-property-wrapper .content-headline {
+      position: static;
+      padding: 0 0 1em 0;
+    }
+    
+    .property-details-footer {
+      .ui-tabs-nav {
+        display: none;
+      }
+    }
+    
+    .list-content {
+      .template-navigation-link {
+        display: none;
+      }
+    }
+    .type-blog {
+      .back-to-blog-home {
+        display: none;
+      }
+    }
+    
+    .forum-submission-toggle {
+      display: none;
+    }
+    
+    table {
+      th {
+        background: @darkest-grey !important;
+        color: @bright-white !important;
+      }
+    }
+    
+    #site-header-row .type-textcontent.no-headline .main-editor-output p {
+      margin-top: 2.5em !important;
+    }
+    
+    .accordion-base .placement-inner .content-headline {
+      background: @lightest-grey !important;
+    }
+    .accordion-base .placement-inner .content-wrapper-inner {
+      display: block !important;
+    }
+    
+    .type-propertysearch {
+      display: none !important;
+    }
+    
+    .type-blogsminilist .blog-posts-list .blog-posts-post .blog-post-inner .content-main-image {
+      padding-top: 0 !important;
+      background-image: none !important;
+    }
+
+    .type-blogsminilist .blog-posts-list .blog-posts-post .blog-post-inner .content-main-image img {
+      display: block !important;
+    }
+
+    .type-slideshow {
+      display: none !important;
+    }
+}

@@ -1,0 +1,59 @@
+.flexbox(@dir:row, @justifycontent:flex-start) {
+  width:100%;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display: -webkit-flex;
+  display:flex;
+  .flexdirection(@dir);
+  .flexjustify(@justifycontent);
+}
+
+.flexdirection(@dir:row) when(@dir = row) {
+  -webkit-box-orient:horizontal;
+  -ms-box-orient:horizontal;
+}
+
+.flexdirection(@dir:row) when(@dir = column) {
+  -webkit-box-orient:vertical;
+  -ms-box-orient:vertical;
+}
+
+.flexdirection(@dir) {
+  -webkit-flex-direction:@dir;
+  -ms-flex-direction:@dir;
+  flex-direction:@dir;
+}
+
+.flexjustify(@jc: flex-start) when(@jc = flex-start) {
+  -webkit-box-pack:start;
+  -ms-box-pack:start;
+}
+
+.flexjustify(@jc: flex-start) when(@jc = flex-end) {
+  -webkit-box-pack:end;
+  -ms-box-pack:end;
+}
+
+.flexjustify(@jc: flex-start) when(@jc = space-between) {
+  -webkit-box-pack:justify;
+  -ms-box-pack:justify;
+}
+
+.flexjustify(@jc) {
+  -webkit-justify-content:@jc;
+  justify-content:@jc;
+}
+
+.flex(@var: 1, @total: 1) {
+  -webkit-box-flex:@var @total auto;
+  -webkit-flex:@var @total auto;
+  -ms-flex:@var @total auto;
+  flex:@var @total auto;
+}
+
+.order(@number) {
+  -webkit-box-ordinal-group: @number;
+  -ms-flex-order: @number;
+  -webkit-order: @number;
+  order: @number;
+}

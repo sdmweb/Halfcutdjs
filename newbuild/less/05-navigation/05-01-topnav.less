@@ -1,0 +1,359 @@
+.horizontal-nav(){ 
+	li {
+		float: left;
+		@media @mobile {
+			float: none;
+			width: auto;
+		}
+	}
+	a {
+		display: block;
+		padding: 0.5em 1em;
+		text-align: center;
+		text-decoration: none;
+	}
+}
+
+.top-nav-base() {
+	display: block;
+	padding: 1em 1.25em;
+	text-align: center;
+	text-decoration: none;
+	color: contrast(@top-nav-bg, @text-color, @bright-white);
+}
+
+#site-nav-row {
+	background-color: @top-nav-bg;
+	.page-placement {
+		padding: 0;
+		.placement-inner {
+			margin: 0;
+		}
+	}
+}
+
+#top-nav when(@topnav-design = background) {
+	> li {
+		> a {
+			transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+			&:hover,
+			&:focus,
+			&:active,
+			&.current {
+				background: @topnav-highlight-color;
+				color: contrast(@topnav-highlight-color, @text-color, @bright-white);
+			}
+		}
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		> li {
+			> a.current {
+				background: transparent;
+				color: @text-color;
+				&:hover,
+				&:focus,
+				&:active {
+					background: @topnav-highlight-color;
+					color: contrast(@topnav-highlight-color, @text-color, @bright-white);
+				}
+			}
+		}
+	}
+}
+
+#top-nav when(@topnav-design = border) {
+	> li {
+		> a {
+			border-bottom: solid 4px transparent;
+			transition: border-bottom 0.25s ease-in-out;
+			&:hover,
+			&:focus,
+			&:active,
+			&.current {
+				border-color: @topnav-highlight-color;
+			}
+		}
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		> li {
+			> a.current {
+				border-color: transparent;
+				&:hover,
+				&:focus,
+				&:active {
+					border-color: @topnav-highlight-color;
+				}
+			}
+		}
+	}
+}
+
+// This Guard Expression governs the behaviour of elements when the logo is on the left
+// ol
+#top-nav when(@topnav-orientation = left) {
+	.list-reset;
+	> li {
+		.list-reset;
+		float:left;
+		> a {
+			.top-nav-base();
+			display:block;
+		}
+	}
+}
+
+// This Guard Expression governs the behaviour of elements when the logo is on the left
+// ol
+#top-nav when(@topnav-orientation = right) {
+	.list-reset;
+	text-align:right;
+	> li {
+		.list-reset;
+		display:inline-block;
+		> a {
+			.top-nav-base();
+			display:block;
+		}
+	}
+}
+
+// This Guard Expression governs the behaviour of elements when the logo is on the right
+// ol
+#top-nav when(@topnav-orientation = centered) {
+	.list-reset;
+	text-align:center;
+	> li {
+		.list-reset;
+		display:inline-block;
+		> a {
+			.top-nav-base();
+			display:block;
+		}
+	}
+}
+
+// This Guard Expression governs the behaviour of elements when the logo is on the right
+// ol
+#top-nav when(@topnav-orientation = full-width) {
+	.list-reset;
+	display:table;
+	width:100%;
+	li {
+		.list-reset;
+		display:table-cell;
+		text-align:center;
+		a {
+			.top-nav-base();
+			display:block;
+		}
+	}
+}
+
+#top-nav {
+	.clearfix;
+	@media @mobile {
+		display: none;
+		li {
+			display: block;
+			float: none;
+			width: 100%;
+			text-align: left;
+			a {
+				text-align: left;
+			}
+		}
+	}
+}
+
+.mobile-nav-toggle-wrap {
+	display: none;
+	@media @mobile {
+		display: block;
+	}
+	.mobile-nav-toggle {
+		.clearfix;
+		display: block;
+		width: 100%;
+		padding: 0.7em 0.5em;
+		border-bottom: none;
+		color: contrast(@top-nav-bg, @text-color, @bright-white);
+		font-size: 18px;
+		background: @top-nav-bg;
+		outline: none !important;
+		.nav-icon {
+			float: left;
+			&:before {
+				.add-icon("f0c9");
+				font-size: 32px;
+				line-height: 32px;
+			}
+			.open& {
+				&:before {
+					.add-icon("f00d");
+				}
+			}
+		}
+		.button-text {
+			display: block;
+			float: left;
+			line-height: 32px;
+			padding: 0 1.5em;
+		}
+	}
+}
+
+.mega-menu-wrapper {
+	position: relative;
+	width: auto;
+	max-width: none;
+	@media @mobile {
+		display: block;
+		position: fixed !important;
+		top: -60px;
+		right: -100%;
+		bottom: 0;
+		background: @off-white !important;
+		padding: 1em;
+		padding-top: 115px;
+		width: 75%;
+		transition: right 0.6s ease-in-out;
+		box-shadow: 0 5px 5px rgba(0,0,0,0.05);
+		//margin: 0;
+	}
+	&.menu-open {
+		right: 0;
+	}
+	#top-nav {
+		padding: 0 0.5em;
+		@media @mobile {
+			height: 100%;
+			overflow-y: auto;
+			display: block;
+			margin: 0 -1em;
+			width: auto;
+			padding: 0;
+		}
+		li {
+			&.has-children {
+				> a {
+					&:after {
+						.add-icon("f0dd");
+						font-weight: 900;
+						position: relative;
+						top: -3px;
+						margin-left: 0.3em;
+					}
+				}
+			}
+			&.menu-item-1 {
+				.mega-menu {
+					margin-left: 0;
+				}
+			}
+			&:last-child {
+				> a {
+					@media @mobile {
+						padding-right: 0.75em;
+					}
+					&.current {
+						padding-right: 0.75em;
+					}
+				}
+				.mega-menu {
+					margin-right: 0;
+				}
+			}
+			.mega-menu {
+				display: none;
+				position: absolute;
+				z-index: 99999;
+				top: 100%;
+				left: 0.5em;
+				right: 0.5em;
+				padding: 1em;
+				background-color: @bright-white;
+				box-shadow: 0 0 8px rgba(0,0,0,0.3);
+				@media @mobile {
+					display: none !important;
+				}
+				.mega-items-wrap {
+					display: table;
+					width: 100%;
+					table-layout: fixed;
+					.menu-column {
+						display: table-cell;
+						text-align: left;
+						padding: 0 2em 0 0;
+						margin: 0;
+						&:last-child {
+							padding-right: 0;
+						}
+						li {
+							display: block;
+							text-align: left;
+						}
+						.submenu-item{
+							display: block;
+							text-align: left;
+							padding-bottom: 2em;
+							> a {
+								border-bottom: solid 1px fadeout(@text-color, 80%);
+								&:hover,
+								&:focus,
+								&:active {
+									text-decoration: none !important;
+									border-bottom-width: 2px;
+									margin-bottom: 9px;
+								}
+							}
+							> a.default,
+							> a.all-children-link {
+								font-weight: 700;
+							}
+							a {
+								display: block;
+								text-align: left;
+								padding: 0;
+								line-height: 1.2;
+								font-weight: 400;
+								margin-bottom: 10px;
+								color: @text-color !important;
+								&.current {
+									background: transparent;
+									color: @text-color;
+								}
+								&.megamenu-show-children {
+									font-style: italic;
+								}
+								&:hover,
+								&:focus,
+								&:active {
+									background: transparent;
+									color: @text-color;
+									text-decoration: underline;
+								}
+							}
+							.submenu-wrap {
+								padding: 0;
+								margin: 0;
+								.subsubmenu-item {
+									a {
+										color: @text-color !important;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.show-mega-menu {
+	display: block !important;
+}

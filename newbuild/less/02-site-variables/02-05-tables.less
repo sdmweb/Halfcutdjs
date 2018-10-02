@@ -1,0 +1,48 @@
+table {
+	width: 100%;
+	@media @mobile {
+		font-size: 90%;
+	}
+	th,
+	td {
+		padding:0.75em;
+		@media @mobile {
+			padding: 0.3em;
+		}
+	}
+	th {
+		background: @color1;
+		color: @bright-white;
+		text-align: left;
+	}
+	thead {
+		th {
+			border-right: solid 2px mix(@color1, @bright-white, 75%);
+			&:last-child {
+				border-right: none;
+			}
+		}
+	}
+	tbody {
+		tr {
+			&:nth-child(even) {
+				td {
+					background:lighten(@off-white,1%);
+				}
+			}
+			&:nth-child(odd) {
+				td {
+					background:lighten(@off-white,4%);
+				}
+			}
+			&:hover {
+				td {
+					background: darken(@off-white,1%);
+				}
+			}
+			td {
+				border-bottom: solid 2px @bright-white;
+			}
+		}
+	}
+}

@@ -1,0 +1,227 @@
+.ui-widget-overlay {
+	background:rgba(255,255,255,0.5);
+	position:fixed;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+}
+
+.ui-dialog.media-provider {
+	background:#FFFFFF;
+	border-radius:5px;
+	.ui-dialog-titlebar {
+		background:@modal-title-bg;
+		padding:@space-em (@space-em * 2);
+		.ui-dialog-titlebar-close {
+			display:none;
+		}
+	}
+	.ui-dialog-content {
+		> div {
+			height:100%;
+			position:relative;
+			padding-bottom:60px;
+		}	
+	}
+	.single-property-wrapper {
+		max-height:100%;
+		overflow:auto;
+		.content-item-inner {
+			padding:(@space-em * 2);
+			.property-details-footer {
+				.ui-tabs-panel {
+					padding: 1em;
+					border-left: solid 1px #cccccc;
+					border-bottom: solid 1px #cccccc;
+					border-right: solid 1px #cccccc;
+				}
+			}
+		}
+		#instance-editing-form {
+			fieldset {
+				.property-item {
+					.content-headline {
+						margin-right: 180px;
+					}
+				}
+				.property-overview {
+					.field-value {
+						display: block;
+					}
+				}
+			}		
+		}
+	}
+	.ce-fragment {
+		padding:(@space-em * 2);
+		&.publishing-settings {
+			.success-note {
+				border:1px solid lighten(@darkest-grey,5%);
+				background:lighten(@darkest-grey,58%);
+				padding:@space-em (@space-em * 2);
+				border-radius:5px;
+			}
+		}
+		fieldset {
+			border:1px solid @lightest-grey;
+			background:@off-white;
+			padding:@space-em (@space-em * 2);
+			margin:(@space-em * 2) 0;
+			legend {
+				border:1px solid @lightest-grey;
+				padding:@space-em (@space-em * 2);
+			}
+			ol,
+			li {
+				.list-reset;
+			}
+			li {
+				margin:@space-em;
+			}
+			.date-hour-field {
+				input {
+					width:50%;
+				}
+			}
+		}
+		.controls {
+			button {
+				padding:(@space-em * 2);
+			}
+		}
+	}
+	.editing-bar {
+		position:absolute;
+		bottom:0;
+		left:0;
+		right:0;
+		padding:(@space-em * 2);
+		&.ce-edit-instance {
+			background:rgba(255,255,255,0.9);
+			box-shadow:0 -2px 4px rgba(0,0,0,0.5);
+			.draft-editable,
+			.draft-not-editable {
+				color:@darkest-grey;
+			}
+			button {
+				padding:(@space-em * 2);
+				margin-right:@space-em;
+				&:before {
+					&:extend(.fonticon);
+					margin-right:@space-em;
+				}
+				&.edit-mode,
+				&.continue-edit {
+					&:before {
+						content:"\f040";
+						font-family: "FontAwesome";	
+					}
+				}
+				&.preview-edits {
+					&:before {
+						content:"\f06e";
+						font-family: "FontAwesome";
+					}
+				}
+				&.finish-edits {
+					padding:(@space-em * 2) (@space-em * 3);
+					&:before {
+						content:"\f058";
+						font-family: "FontAwesome";
+					}
+				}
+			}
+			.ce-btn-tertiary {
+				margin-left:(@space-em * 2);
+				color:@darker-grey;
+				text-decoration:underline;
+				&:hover {
+					color:@text-color;
+					text-decoration:none;
+				}
+			}
+		}
+	}
+	.property-documents {
+		h5 {
+			margin-bottom: 0;
+		}
+		.document-list {
+			li {
+				background: @off-white;
+				border-top: solid 1px @light-grey;
+				border-bottom: solid 1px @light-grey;
+				padding: 0.5em;
+				margin: 0.3em 0;
+				&:first-child {
+					border: none;
+					background: none;
+				}
+				.document-txt {
+					.inline-block;
+					padding: 0.3em 0;
+				}
+				&:hover {
+					background: @bright-white;
+				}
+				a {
+					img {
+						padding-right: 1em;
+					}
+				}
+			}
+		}
+	}
+}
+
+.gallery-wrapper {
+	.list-content-item {
+		position:relative;
+	}
+}
+
+.remove-control {
+	background:rgba(0,0,0,0.8);
+	z-index:10;
+	padding:@space-px (@space-px * 2);
+	.track-check {
+		display:none;
+	}
+	.document-list & {
+		left:auto;
+		float:right;
+		background: @light-grey;
+		border-radius: 5px;
+		margin-top: 1.3em;
+		&:hover {
+			background: #c0392b;
+		}
+	}
+}
+
+.unassign-image-resource,
+.unassign-main-image,
+.unassign-doc-resource {
+	cursor:pointer;
+	text-shadow:0 0 2px rgba(0,0,0,0.7);
+	color:lighten(@darkest-grey,30%);
+	&:before {
+		&:extend(.fonticon);
+		content:"\f056";
+		font-family: "FontAwesome";
+		padding-right: 0.4em;
+	}
+	&:hover {
+		&:before {
+			&:extend(.fonticon);
+			content:"\f057";
+			font-family: "FontAwesome";
+		}
+	}
+}
+
+.unassign-doc-resource {
+	text-shadow: none;
+	color: @bright-white;
+}

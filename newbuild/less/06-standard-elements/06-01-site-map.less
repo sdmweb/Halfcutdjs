@@ -1,0 +1,23 @@
+.sitemap {
+	.list-reset;
+	.columns(auto, 3, 2em, @lighter-grey, solid, 1px);
+	ol,
+	li {
+		.list-reset;
+	}
+	li {
+		padding-bottom: 0.3em;
+		.top-level {
+			margin-bottom: 0.5em;
+		}
+		ol {
+			padding-left: 1.5em;
+		}
+	}
+	@media @over {
+		.columns(auto, 2, 2em, @lighter-grey, solid, 1px);
+	}
+  @media @mobile {
+  	.columns(auto, 1, 2em, @lighter-grey, solid, 1px);
+  }
+}

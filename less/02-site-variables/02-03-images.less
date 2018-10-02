@@ -1,0 +1,44 @@
+@standard-images-url: "../images/";
+@base-images-url: "../images/_site/";
+
+.bg-pos (@repeat:no-repeat,@pos-x:center,@pos-y:center) {
+	background-position: @pos-x @pos-y;
+	background-repeat: @repeat;
+}
+	
+@small-icon-size:18px;
+@standard-icon-size:24px;
+@larger-icon-size:36px;
+@larger-icon-size:48px;
+
+.content-image-aligned-left,
+.content-image-aligned-right {
+	max-width:100%;
+	height:auto;
+}
+.content-image-aligned-left {
+	float:left;
+	margin:0.5em 2.5em 1em 0;
+}
+.content-image-aligned-right {
+	float:right;
+	margin:0.5em 0 1em 2.5em;
+}
+
+img,
+video,
+iframe,
+audio {
+	max-width: 100%;
+}
+
+table {
+	img {
+		max-width: none;
+	}
+}
+.map-wrapper-inner {
+	img {
+		max-width: none!important;
+	}
+}

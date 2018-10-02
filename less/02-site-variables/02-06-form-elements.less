@@ -1,0 +1,104 @@
+input[type="search"] {
+	&::-webkit-search-decoration,
+	&::-webkit-search-cancel-button,
+	&::-webkit-search-results-button,
+	&::-webkit-search-results-decoration {
+		display: none;
+	}
+}
+input[type="search"] {
+	-webkit-appearance: textfield;
+}
+.text-inputs() {
+	.box-sizing-reset;
+	border: 1px solid @grey;
+	padding: 0.5em;
+	&:hover,
+	&:focus {
+		border-color: @dark-grey;
+		outline: none;
+	}
+}
+
+#container {
+	input[type='text'],
+	input[type='password'],
+	input[type='tel'],
+	input[type='url'],
+	input[type='email'],
+	input[type="search"],
+	input[type="number"],
+	textarea {
+		width: 100%;
+		.ie7 & {
+			width: 96%;
+		}
+	}
+	label {
+		margin: 0.5em 0 0.2em 0;
+		display: block;
+		vertical-align: top;
+	}
+	input {
+		&[type='text'],
+		&[type='search'],
+		&[type='password'],
+		&[type='tel'],
+		&[type='url'],
+		&[type='email'],
+		&[type='number'] {
+			.text-inputs;
+			.box-sizing-reset;
+		}
+	}
+	textarea {
+		.text-inputs;
+		min-height:8em;
+		resize:vertical;
+	}
+	.col {
+		select {
+			width: 100%;
+		}
+	}
+	button,
+	input[type="submit"] {
+		.btn;
+	}
+	input {
+		&[type='checkbox'],
+		&[type='radio'] {
+			clear: left;
+			float: left;
+			margin: 0.2em 0.7em;
+			&:focus {
+				outline: 1px solid @grey-black;
+			}
+		}
+	}
+	.checkbox_label {
+		margin: 0;
+		float: left;
+	}
+	.placeholder-text(@grey, Helvetica, 1em);
+}
+
+ul.ui-autocomplete {
+	.list-reset;
+	background: @bright-white;
+	border: 1px solid @light-grey;
+	width: 250px;
+	margin: 1em 0;
+	padding: 0;
+	li {
+		.list-reset;
+	}
+	a {
+		display: block;
+		padding: 0.5em;
+		&:hover,
+		&:focus {
+			background: @off-white;
+		}
+	}
+}
