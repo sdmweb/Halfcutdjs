@@ -1002,6 +1002,23 @@
 		"sM": 0,
 		"sU": 0
 		},
+	"\/less\/07-modules\/07-26-bg-video.less": {
+		"aP": 1,
+		"bl": 0,
+		"dJ": 0,
+		"ft": 1,
+		"ie": 1,
+		"iI": 0,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/less\/07-modules\/07-26-bg-video.css",
+		"oF": 0,
+		"oS": 1,
+		"rU": 0,
+		"sI": 0,
+		"sM": 0,
+		"sU": 0
+		},
 	"\/less\/08-slideshows\/08-01-cycle-slideshow.less": {
 		"aP": 1,
 		"bl": 0,
@@ -1241,6 +1258,16 @@
 		"sM": 0,
 		"sU": 0
 		},
+	"\/plugins.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/plugins-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"\/README.md": {
 		"cB": 0,
 		"cS": 0,
@@ -1358,6 +1385,20 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/resources\/css\/styles.css.map",
+		"oF": 0
+		},
+	"\/resources\/img\/Baga-Beach.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/resources\/img\/Baga-Beach.mp4",
+		"oF": 0
+		},
+	"\/resources\/img\/Baga-Beach.webm": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/resources\/img\/Baga-Beach.webm",
 		"oF": 0
 		},
 	"\/resources\/img\/Halfcut djs Logo.png": {

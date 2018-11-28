@@ -28,12 +28,17 @@
     </head>
     
     <body>
+        <video class="bg-video_content" autoplay muted loop >
+                    <source src="resources/img/Baga-Beach.mp4" type="video/mp4">
+                    <source src="resources/img/Baga-Beach.webm" type="video/webm">
+                    Your browser does not support this! please upgrade!
+            </video>
         <div id="main">
         <header class="header">
             <div class="logo">
                 <img src="resources/img/Halfcut%20djs%20Logo.png" alt="halfcutdjs-logo" id="logo">
             </div>
-            <div class="right-header">
+            <div class="fixed-socials">
                 <div class="socials">
                     <a href="http://www.facebook.com/halfcutdjs" target="_blank"><i class="ion-social-facebook"></i></a>
                     <a href="http://www.twitter.com/halfcutdjs" target="_blank"><i class="ion-social-twitter"></i></a>
@@ -41,43 +46,47 @@
                     <a href="https://www.instagram.com/halfcutdjs/" target="_blank"><i class="ion-social-instagram"></i></a>
                     <a href="https://www.youtube.com/channel/UCMDHl-9enRpswTfzUohTNmA" target="_blank"><i class="ion-social-youtube"></i></a>            
                 </div>
-                <div id="mySidenav" class="sidenav">
-                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                  <a href="#">About</a>
-                  <a href="#">Services</a>
-                  <a href="#">Clients</a>
-                  <a href="#">Contact</a>
-                </div>
-
-<!--                <div id="main">-->
-                <div>
-                    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-                </div>
-
-                
             </div>
             
         </header>
         
-        <div class="main-slider">
+            
+<!--
+        <section class="section-banner-video">
+            <div class="bg-video">
+                <video class="bg-video_content" autoplay muted loop >
+                    <source src="resources/img/Baga-Beach.mp4" type="video/mp4">
+                    <source src="resources/img/Baga-Beach.webm" type="video/webm">
+                    Your browser does not support this! please upgrade!
+                </video>
+            </div>
+            
+            
+        </section>
+-->
+            
+        <div class="main-content">
+            
+            
+            <div class="main-slider">
             <div class="bxslider">
               <div><img src="/resources/img/hero-slide-1.jpg"></div>
               <div><img src="/resources/img/Hero-slide-2.jpg"></div>
               <div><img src="/resources/img/Zigfrid%20Halfcut.jpg"></div>
             </div>
-            <div class="book-now-button">
-                <a href="#popup" class="button">BOOKINGS</a>
             </div>
-        </div>
-      
-        
-        <div class="bio-button button">
-            <a href="#popup">Bio</a>
-        </div>
-        
-        <section class="section-about">
-            <div class="row">
-                <div class="col span-2-of-3 bio">
+            
+            
+            <div class="third-row">
+<!--
+            <section class="section-tour" id="section-tour">
+            <div class="songkick">
+                 <a href="http://www.songkick.com/artists/8640219" class="songkick-widget" data-theme="light" data-track-button="on" data-detect-style="true" data-background-color="transparent">Halfcut DJs tour dates</a>
+            </div>
+            </section>
+-->
+        <section class="section-bio">
+            <div class="section-bio_content">
                     <p />Halfcut DJs was conceived by two close work colleagues, Simon Middleton and Richard Gibson, over a few Rum &amp; Cokes at Ushuaia in Ibiza with a vow to one day return to the island and be behind the decks.
                     <p></p>
                     <br>
@@ -85,55 +94,31 @@
                     <p></p>
                     <br>
                     <p />With an eclectic taste ranging from House, EDM, Techno, Breaks and beyond, the pair are on a mission to play the freshest, dirtiest and most tasteful head bangers until the dancefloor collapses.
-               
-
-                </div>
-                
             
-        
+            </div>    
             
-        
-                <div class="col span-1-of-3">
+        </section>     
             
-                    <a class="twitter-timeline" href="https://twitter.com/halfcutdjs" height="250px" background-color="black">Tweets by halfcutdjs</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                
-                
-                </div>
-            </div>
-        </section>
-
-         <section class="section-tour" id="section-tour">
-        
-            <div class="songkick">
-                 <a href="http://www.songkick.com/artists/8640219" class="songkick-widget" data-theme="light" data-track-button="on" data-detect-style="true" data-background-color="transparent">Halfcut DJs tour dates</a>
+        </div>     
             
-            </div>
-        
-        
-        </section>
-        
-        <div class="popup" id="popup">
-                <div class="popup-content">
-                    <div class="popup-left">
-                    <img src="resources/img/pool.jpg"><img>
-                    <img src="resources/img/pool.jpg"><img>
-                </div>            
-                <div class="popup-right">
-                    <a href="#section-tour" class="button-close">&times;</a>
-                    <p />Halfcut DJs was conceived by two close work colleagues, Simon Middleton and Richard Gibson, over a few Rum &amp; Cokes at Ushuaia in Ibiza with a vow to one day return to the island and be behind the decks.
-                    <p></p>
-                    <br>
-                    <p />Having hosted a series of their own club nights in London, their experience includes DJ’ing at venues across the city such as 93 Feet East, Bar Music Hall, Kazbah, Brixton Jamm and Kavinsksy’s Album Launch at Nettil house.
-                    <p></p>
-                    <br>
-                    <p />With an eclectic taste ranging from House, EDM, Techno, Breaks and beyond, the pair are on a mission to play the freshest, dirtiest and most tasteful head bangers until the dancefloor collapses.            
-                </div>
-            </div>            
+            
         </div>
+            
+        
+      
+        
+        
+        
+        
+
+          
+            
+    
         
         <footer>
              
             <section class="section-footer">
+<!--
                 <div class="socials">
                     <a href="http://www.facebook.com/halfcutdjs" target="_blank"><i class="ion-social-facebook"></i></a>
                     <a href="http://www.twitter.com/halfcutdjs" target="_blank"><i class="ion-social-twitter"></i></a>
@@ -141,14 +126,23 @@
                     <a href="https://www.instagram.com/halfcutdjs/" target="_blank"><i class="ion-social-instagram"></i></a>
                     <a href="https://www.youtube.com/channel/UCMDHl-9enRpswTfzUohTNmA" target="_blank"><i class="ion-social-youtube"></i></a>            
                 </div>
-                <div class="row">
+-->             <div class="footer-top">
+                    <div class="twitter">
+                    <a class="twitter-timeline" href="https://twitter.com/halfcutdjs" height="250px" background-color="black">Tweets by halfcutdjs</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                    <div class="songkick">
+                         <a href="http://www.songkick.com/artists/8640219" class="songkick-widget" data-theme="light" data-track-button="on" data-detect-style="true" data-background-color="transparent">Halfcut DJs tour dates</a>
+                    </div>
+            
+                </div>
+                
+                <div class="footer-bottom">
                     <div class="copyright">
                         <p>
                         Copyright &copy; 2016.  All rights reserved. 
                         </p>
                     
-                    </div>
-                    
+                    </div>   
                 </div>
             
             </section>
